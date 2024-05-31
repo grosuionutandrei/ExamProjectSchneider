@@ -55,7 +55,7 @@ class RateCalculatorTest {
      */
     @Test
     void calculateEmployeeDayRateWithoutUtilization() {
-        BigDecimal employeeDayRate = this.rateCalculator.calculateEmployeeTotalDayRate(this.employeeOverhead).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal employeeDayRate = this.rateCalculator.calculateEmployeeTotalDayRate(this.employeeResource).setScale(2, RoundingMode.HALF_UP);
         BigDecimal expectedResult = BigDecimal.valueOf(196.00).setScale(2, RoundingMode.HALF_UP);
         Assertions.assertEquals(expectedResult, employeeDayRate);
     }

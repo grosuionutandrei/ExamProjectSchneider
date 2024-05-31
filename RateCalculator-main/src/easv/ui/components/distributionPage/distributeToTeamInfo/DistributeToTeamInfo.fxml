@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox fx:id="teamComponentDistributeFrom" alignment="CENTER" maxHeight="-Infinity" maxWidth="510.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="254.0" styleClass="teamComponent" stylesheets="/easv/ui/styling/DistributeFromComponentStyle.css" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <VBox alignment="CENTER" maxHeight="50.0" maxWidth="85.0" minHeight="-Infinity" minWidth="42.0" prefHeight="50.0" prefWidth="85.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <Label fx:id="teamName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="40.0" prefHeight="39.0" prefWidth="40.0" text="United" textOverrun="CLIP" />
+                </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutX="471.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="50.0" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <Label fx:id="dayRate" alignment="CENTER" text="0" textOverrun="CLIP" />
+                    <Label fx:id="dayCurrency" text="\$" />
+                </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="50.0" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <Label fx:id="hourlyRate" alignment="CENTER" text="0" />
+                    <Label fx:id="hourlyCurrency" text="\$" />
+                </children>
+            </HBox>
+            <VBox alignment="CENTER" maxHeight="50.0" maxWidth="85.0" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="85.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <Label fx:id="teamCountries" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="40.0" prefHeight="39.0" prefWidth="40.0" text="Europe" textOverrun="CLIP" />
+                </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="85.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <Label fx:id="teamRegions" alignment="CENTER" maxHeight="-Infinity" maxWidth="85.0" minHeight="-Infinity" minWidth="40.0" prefHeight="39.0" prefWidth="40.0" text="Service" textOverrun="CLIP" />
+                </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="85.0" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <MFXTextField fx:id="distributionPercentage" maxHeight="-Infinity" maxWidth="85.0" minHeight="30.0" minWidth="20.0" prefHeight="30.0" prefWidth="23.0" styleClass="distributionPercentageInput" />
+                </children>
+            </VBox>
+      <VBox fx:id="removeTeam" alignment="CENTER" maxWidth="30.0" minWidth="20.0" prefHeight="50.0" prefWidth="30.0" styleClass="removeButtonContainer" HBox.hgrow="ALWAYS">
+          <SVGPath content="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4 M20.5001 6H3.5 M18.8332 8.5L18.3732 15.3991C18.1962 18.054 18.1077 19.3815 17.2427 20.1907C16.3777 21 15.0473 21 12.3865 21H11.6132C8.95235 21 7.62195 21 6.75694 20.1907C5.89194 19.3815 5.80344 18.054 5.62644 15.3991L5.1665 8.5 M9.5 11L10 16 M14.5 11L14 16" fill="WHITE" fillRule="EVEN_ODD" scaleX="1.2" scaleY="1.2" styleClass="removeButton" />
+      </VBox>
+        </children>
+        <padding>
+            <Insets left="5.0" right="5.0" />
+        </padding>
+    </HBox>

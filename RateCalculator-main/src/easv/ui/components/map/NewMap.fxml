@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import org.controlsfx.control.WorldMapView?>
+
+<StackPane fx:id="mapContainer" minHeight="300.0" minWidth="300.0" style="-fx-background-color: #F9F9F9;" stylesheets="@../../styling/Location.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER">
+         <children>
+            <Region disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="91.0" HBox.hgrow="NEVER" />
+            <WorldMapView fx:id="worldMap" minHeight="300.0" minWidth="300.0" pickOnBounds="false" style="-fx-background-color: #F9F9F9;" styleClass="world_map">
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </WorldMapView>
+         </children>
+      </HBox>
+      <StackPane maxHeight="-Infinity" maxWidth="250.0" minHeight="-Infinity" minWidth="250.0" prefHeight="100.0" prefWidth="250.0" StackPane.alignment="BOTTOM_LEFT">
+         <children>
+            <VBox fx:id="unsuportedCountries" alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="20.0" minWidth="20.0" prefHeight="0.0" prefWidth="0.0" styleClass="unsuportedButton"  StackPane.alignment="CENTER_RIGHT">
+               <children>
+                  <SVGPath styleClass="unsuportedIcon" content="m11.836 3.2266h76.328c2.9805 0 5.6836 1.2188 7.6484 3.1758 1.9609 1.9609 3.1758 4.668 3.1758 7.6484s-1.2188 5.6875-3.1758 7.6484c-1.9609 1.9609-4.668 3.1758-7.6484 3.1758h-76.328c-2.9805 0-5.6836-1.2188-7.6484-3.1758-1.9609-1.9609-3.1758-4.668-3.1758-7.6484s1.2188-5.6875 3.1758-7.6484c1.9609-1.9609 4.668-3.1758 7.6484-3.1758zm0 71.902h76.328c2.9805 0 5.6836 1.2188 7.6484 3.1758 1.9609 1.9609 3.1758 4.668 3.1758 7.6484s-1.2188 5.6875-3.1758 7.6484c-1.9609 1.9609-4.668 3.1758-7.6484 3.1758h-76.328c-2.9805 0-5.6836-1.2188-7.6484-3.1758-1.9609-1.9609-3.1758-4.668-3.1758-7.6484s1.2188-5.6875 3.1758-7.6484c1.9609-1.9609 4.668-3.1758 7.6484-3.1758zm76.328 4.5938h-76.328c-1.7109 0-3.2695 0.70312-4.4023 1.832-1.1328 1.1328-1.832 2.6875-1.832 4.4023 0 1.7148 0.70313 3.2695 1.832 4.4023 1.1328 1.1328 2.6875 1.832 4.4023 1.832h76.328c1.7109 0 3.2695-0.70312 4.4023-1.832 1.1328-1.1328 1.832-2.6875 1.832-4.4023 0-1.7148-0.70313-3.2695-1.832-4.4023-1.1328-1.1328-2.6875-1.832-4.4023-1.832zm-71-40.543h65.672c2.9805 0 5.6836 1.2188 7.6484 3.1758 1.9609 1.9609 3.1758 4.668 3.1758 7.6484 0 2.9805-1.2188 5.6836-3.1758 7.6484-1.9609 1.9609-4.668 3.1758-7.6484 3.1758h-65.672c-2.9805 0-5.6836-1.2188-7.6484-3.1758-1.9609-1.9609-3.1758-4.668-3.1758-7.6484 0-2.9805 1.2188-5.6836 3.1758-7.6484 1.9609-1.9609 4.668-3.1758 7.6484-3.1758zm65.672 4.5938h-65.672c-1.7109 0-3.2695 0.70312-4.4023 1.832-1.1328 1.1328-1.832 2.6875-1.832 4.4023 0 1.7109 0.70312 3.2695 1.832 4.4023 1.1328 1.1328 2.6875 1.832 4.4023 1.832h65.672c1.7109 0 3.2695-0.70313 4.4023-1.832 1.1328-1.1328 1.832-2.6875 1.832-4.4023 0-1.7109-0.70312-3.2695-1.832-4.4023-1.1328-1.1328-2.6875-1.832-4.4023-1.832zm5.332-35.949h-76.328c-1.7109 0-3.2695 0.70312-4.4023 1.832-1.1328 1.1328-1.832 2.6875-1.832 4.4023s0.70312 3.2695 1.832 4.4023c1.1328 1.1328 2.6875 1.832 4.4023 1.832h76.328c1.7109 0 3.2695-0.70312 4.4023-1.832 1.1328-1.1328 1.832-2.6875 1.832-4.4023s-0.70312-3.2695-1.832-4.4023c-1.1328-1.1328-2.6875-1.832-4.4023-1.832z" fill="#2ba746" scaleX="0.2" scaleY="0.2"  />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </StackPane>
+   </children>
+</StackPane>

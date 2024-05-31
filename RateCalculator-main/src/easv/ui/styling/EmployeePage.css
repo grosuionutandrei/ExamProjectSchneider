@@ -1,0 +1,190 @@
+
+.scroll-bar {
+    -fx-opacity: 0;
+}
+
+.label {
+    -fx-text-fill: rgba(47, 46, 46, 1);
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+}
+
+.text-field {
+    -fx-background-radius: 12;
+    -fx-border-color: rgb(126, 123, 123);
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+}
+
+
+
+.text-field:empty {
+    -fx-border-color: rgb(114, 112, 112); /* Revert to default border color when TextField is empty */
+}
+
+.employees {
+    -fx-text-fill: rgba(47, 46, 46, 1);
+    -fx-font-family: Open Sans;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+}
+
+.tableLabels {
+    -fx-text-fill: rgba(47, 46, 46, 1);
+    -fx-font-family: Open Sans;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+
+
+}
+
+.svg-revert {
+    -fx-fill: #2BA746FF; /* Green color */
+    -fx-stroke: #2BA746FF; /* Green color */
+    -fx-stroke-width: 0.8;
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+
+}
+
+.svg-revert:hover {
+    -fx-fill: #63b2e1;
+    -fx-stroke: #63b2e1;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+.svg-search {
+    -fx-fill: #2BA746FF; /* Green color */
+    -fx-stroke: #2BA746FF; /* Green color */
+    -fx-stroke-width: 1.2;
+    -fx-scale-x: 0.6;
+    -fx-scale-y: 0.6;
+}
+
+.popupView {
+    -fx-background-color: white;
+    -fx-border-radius: 10;
+
+}
+
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+}
+
+.list-view .viewport {
+    -fx-border-radius: 0 0 5 5;
+    -fx-background-radius: 0 0 5 5;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #102c57;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.list-view .list-cell:hover {
+    -fx-text-fill: #081a2d;
+    -fx-background-color: #c2d1e2;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #051017;
+    -fx-text-fill: #c2d1e2;
+}
+
+
+.mfx-combo-box:focus-within .caret .mfx-font-icon {
+    -mfx-color: #2ba746;
+}
+
+
+.mfx-combo-box:focus-within {
+    -fx-border-color: #2ba746;
+    -fx-text-fill: #2ba746;
+    -fx-border-width: 1 1 1 0;
+    -fx-background-color: #fff;
+}
+
+.mfx-combo-box-cell:hover {
+    -fx-background-color: #56EA8C7F;
+}
+
+.mfx-combo-box-cell:selected {
+    -fx-background-color: #2ba746;
+}
+
+
+.revertIcon {
+    -fx-fill: #2ba746;
+    -fx-stroke: #2ba746;
+}
+
+
+/*style the filter undo button hbox */
+.countryFilter {
+    -fx-background-radius: 12 0 0 12;
+    -fx-border-color: #7E7B7BFF;
+    -fx-border-radius: 12 0 0 12;
+    -fx-border-width: 2 0 2 2;
+    -fx-background-color: #fff;
+}
+
+/*style for filter button for on hover*/
+.countryFilter:hover {
+    -fx-background-color: #63b2e1;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+/*style the svg icon when hovering over the button*/
+.countryFilter:hover .revertIcon {
+    -fx-fill: #fff;
+    -fx-stroke: #fff;
+}
+
+/*style the filters comboboxes*/
+.countryFilterComboBox {
+    -fx-background-radius: 0 12 12 0;
+    -fx-border-color: #7E7B7BFF;
+    -fx-border-radius: 0 12 12 0;
+    -fx-border-width: 2 2 2 0;
+}
+
+
+/**style the filter button  box when the combobox has the focus*/
+.countryFilterFocused {
+    -fx-border-width: 1 0 1 1;
+    -fx-background-insets: 2;
+    -fx-border-color: #2ba746;
+    -fx-border-insets: -0.5;
+
+}
+
+/*style the text inside the comboboxes */
+.countryFilterComboBox .text-field {
+    -fx-background-radius: 0;
+    -fx-border-color: #fff;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-alignment: center;
+}
+
+
+.employeesVboxContainer{
+    -fx-background-color: #D1D0D0;
+    -fx-background-radius: 25;
+}
+
+.employeesVboxContainerOnEdit{
+    -fx-background-color:#fff ;
+}
+
+
+
+

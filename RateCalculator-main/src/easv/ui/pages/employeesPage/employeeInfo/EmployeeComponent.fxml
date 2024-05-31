@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox id="popup-element" fx:id="employeeComponent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="750.0" spacing="7.0" style="-fx-background-radius: 20; -fx-background-color: F8F8F8;" styleClass="employeeComponent" stylesheets="/easv/ui/styling/EmployeeComponent.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="70.0" prefWidth="125.0">
+         <children>
+            <Label fx:id="employeeName" prefHeight="39.0" prefWidth="89.0" />
+         </children>
+         <padding>
+            <Insets left="15.0" />
+         </padding></VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="110.0">
+         <children>
+            <Label fx:id="employeeType" prefHeight="44.0" prefWidth="115.0" />
+         </children></VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="110.0">
+         <children>
+            <Label fx:id="region" prefHeight="35.0" prefWidth="93.0" />
+         </children>
+      </VBox>
+      <VBox fx:id="countryBox" alignment="CENTER" prefHeight="200.0" prefWidth="110.0">
+         <children>
+            <Label fx:id="country" prefHeight="40.0" prefWidth="127.0" />
+         </children></VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label fx:id="team" prefHeight="35.0" prefWidth="97.0" />
+         </children></VBox>
+      <HBox alignment="CENTER" layoutX="471.0" layoutY="10.0" prefHeight="70.0" prefWidth="90.0">
+         <children>
+            <Label fx:id="dayCurrency" />
+            <Label fx:id="dayRate" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="90.0">
+         <children>
+            <Label fx:id="hourlyCurrency" />
+            <Label fx:id="hourlyRate" />
+         </children>
+      </HBox>
+      <VBox fx:id="editButton" alignment="CENTER" prefHeight="200.0" prefWidth="80.0" styleClass="editbuttonBackground">
+         <children>
+            <SVGPath content="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" fill="WHITE" fillRule="EVEN_ODD" scaleX="1.5" scaleY="1.5" stroke="#2ba746" strokeWidth="2.0" styleClass="svgFill" />
+         </children></VBox>
+      <VBox fx:id="deleteContainer" alignment="CENTER" prefHeight="70.0" prefWidth="80.0">
+         <children>
+            <VBox fx:id="deleteContainer2" alignment="CENTER" prefHeight="46.0" prefWidth="55.0" />
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets right="15.0" />
+         </padding></VBox>
+   </children>
+</HBox>

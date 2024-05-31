@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="confirmationWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="513.0" style="-fx-background-radius: 20;" styleClass="background" stylesheets="/easv/ui/styling/Confirmation.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox alignment="CENTER" prefHeight="130.0" spacing="40.0">
+            <children>
+                <SVGPath content="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" fill="#39c54c" scaleX="4.0" scaleY="4.0">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin></SVGPath>
+                <VBox alignment="CENTER" prefHeight="121.0" prefWidth="280.0">
+                    <children>
+                        <Label fx:id="confirmationTitle" text="This operation will  be permanent." textFill="#dddbdb">
+                            <font>
+                                <Font name="Open Sans SemiBold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="entityTitle" text="Press confirm to continue." textFill="#dddbdb">
+                            <font>
+                                <Font name="Open Sans SemiBold" size="14.0" />
+                            </font></Label>
+                    </children>
+               <padding>
+                  <Insets left="16.0" top="40.0" />
+               </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="30.0">
+            <children>
+                <Label fx:id="errorMessage">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="57.0" prefWidth="529.0" spacing="30.0">
+            <children>
+            <MFXProgressSpinner fx:id="progressSpinner" prefHeight="47.0" prefWidth="47.0" visible="false">
+               <HBox.margin>
+                  <Insets right="170.0" />
+               </HBox.margin>
+            </MFXProgressSpinner>
+                <MFXButton buttonType="RAISED" depthLevel="LEVEL0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cancelOperation" prefHeight="30.0" prefWidth="80.0" rippleColor="#427972" styleClass="button-cancel" text="Cancel" />
+                <MFXButton buttonType="RAISED" depthLevel="LEVEL0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#confirmOperation" prefHeight="30.0" prefWidth="80.0" rippleColor="#63b2e1" styleClass="button-save" text="Confirm" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </MFXButton>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</VBox>

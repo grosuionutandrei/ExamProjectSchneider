@@ -1,0 +1,52 @@
+.button{
+    -fx-background-color: transparent;
+}
+
+.button:hover{
+    -fx-background-color: #209be5;
+
+}
+.button{
+    -fx-background-color: #63B2E1;
+
+}
+
+.edit:hover{
+    -fx-background-color:#63b2e1;
+    -fx-background-radius: 5;
+}
+
+
+.edit:hover > .svgFill{
+    -fx-fill:#63b2e1 ;
+    -fx-stroke: #fff;
+}
+
+
+.component {
+    -fx-background-color: #ffffff; /* Button color */
+    -fx-background-radius: 17px;
+    /*-fx-padding: 10px 20px;*/
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent; /* No border initially */
+    -fx-border-radius: 17px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0), 0, 0, 0, 0);
+    -fx-transition: all 0.3s;
+}
+
+.component:hover {
+    -fx-border-color: #cccccc; /* Border color on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5); /* Shadow on hover */
+}
+
+.componentClicked{
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(86,234,140,0.5), 10, 0, 0, 5);
+}
+.componentClicked:hover{
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(86,234,140,0.5), 10, 0, 0, 5);
+}
+
+

@@ -1,0 +1,89 @@
+.textField:error{
+    -fx-border-color: red;
+    -fx-border-width: 2;
+}
+
+.comboBox:error{
+    -fx-border-color: red;
+    -fx-border-width: 2;
+}
+
+.textField:focus-within{
+    -fx-background-insets: 2;
+    -fx-border-color: #2ba746; ;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+}
+
+
+
+.mfx-combo-box:focus-within .caret .mfx-font-icon {
+    -mfx-color: #2ba746;
+}
+
+
+.mfx-combo-box:focus-within{
+    -fx-border-color: #2ba746;
+    -fx-text-fill: #2ba746;
+}
+
+.mfx-combo-box-cell:hover {
+    -fx-background-color: #56EA8C7F;
+}
+
+.mfx-combo-box-cell:selected {
+    -fx-background-color: #2ba746;
+}
+
+.clear:hover{
+    -fx-background-color:#63b2e1;
+    -fx-background-radius: 5;
+}
+
+
+.clear:hover > .svgFill{
+    -fx-fill:#63b2e1 ;
+    -fx-stroke: #fff;
+}
+
+.button{
+    -fx-background-color: transparent;
+}
+
+.button-save:hover{
+    -fx-background-color: #209be5;
+
+}
+.button-save{
+    -fx-background-color: #63B2E1;
+
+}
+
+.list-view {
+    -fx-border-color: transparent;
+}
+
+.list-view:focused {
+    -fx-border-color: #2ba746;
+}
+
+.list-cell:selected {
+    -fx-background-color: #2ba746;
+    -fx-text-fill: white;
+}
+
+.list-cell:selected:focused {
+    -fx-background-color: #2ba746;
+}
+
+.tooltip {
+    -fx-background-color: #63b2e1; /* Blue background color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-weight: bold; /* Font weight */
+    -fx-padding: 5px 10px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-border-radius: 6px; /* Rounded corners */
+}
+
+

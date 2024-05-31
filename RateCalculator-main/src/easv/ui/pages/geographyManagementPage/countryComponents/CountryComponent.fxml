@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox id="popup-element" fx:id="countryInfoComponent" maxHeight="-Infinity" maxWidth="570.0" minHeight="-Infinity" minWidth="370.0" prefHeight="60.0" prefWidth="480.0" spacing="7.0" styleClass="component" stylesheets="/easv/ui/styling/GeographyPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="nameLB" prefHeight="39.0" prefWidth="89.0" wrapText="true" />
+            </children>
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="60.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="teamLB" prefHeight="44.0" prefWidth="115.0" />
+            </children>
+        </VBox>
+      <Region prefHeight="60.0" prefWidth="40.0" />
+        <VBox alignment="CENTER" prefHeight="60.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="employeeLB" prefHeight="35.0" prefWidth="93.0" />
+            </children>
+        </VBox>
+      <VBox fx:id="editButton" alignment="CENTER" layoutX="345.0" layoutY="10.0" prefHeight="61.0" prefWidth="59.0" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="47.0" styleClass="edit" VBox.vgrow="ALWAYS">
+               <children>
+                  <SVGPath content="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" fill="WHITE" fillRule="EVEN_ODD" scaleX="1.5" scaleY="1.5" stroke="#2ba746" strokeWidth="2.0" styleClass="svgFill">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </SVGPath>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+        <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+                <Insets right="10.0" />
+            </HBox.margin>
+         <children>
+            <VBox fx:id="deleteContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="47.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+        </VBox>
+    </children>
+</HBox>

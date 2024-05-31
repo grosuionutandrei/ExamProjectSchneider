@@ -1,0 +1,12 @@
+
+.deleteButtonBackground:hover{
+    -fx-background-color:#63b2e1;
+    -fx-background-radius: 5;
+}
+
+
+.deleteButtonBackground:hover > .svgFill{
+    -fx-fill:#63b2e1 ;
+    -fx-stroke: #fff;
+}
+

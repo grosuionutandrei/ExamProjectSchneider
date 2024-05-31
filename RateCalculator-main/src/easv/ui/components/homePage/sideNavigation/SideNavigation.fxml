@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<ScrollPane fx:id="sideNavigationContainer" hbarPolicy="NEVER" maxWidth="-Infinity" minViewportHeight="90.0" minViewportWidth="90.0" minWidth="-Infinity" prefViewportHeight="90.0" prefViewportWidth="90.0" prefWidth="90.0" style="-fx-background-color: #fff;" styleClass="navContainer" stylesheets="@../../../styling/NavigationButton.css" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox fx:id="iconsContainer" alignment="CENTER_LEFT" fillWidth="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="300.0" spacing="10.0" style="-fx-background-color: #fff;" styleClass="navContainer">
+            <children>
+                <Region maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" VBox.vgrow="ALWAYS" />
+                <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" />
+                <Line fx:id="theLine" endX="250.0" />
+                <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" />
+                <Region VBox.vgrow="ALWAYS" />
+            </children>
+            <padding>
+                <Insets left="10.0" top="10.0" />
+            </padding>
+        </VBox>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</ScrollPane>

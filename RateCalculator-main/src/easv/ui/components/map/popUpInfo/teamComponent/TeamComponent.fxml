@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox fx:id="teamComponent" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="400.0" styleClass="teamComponent" stylesheets="@../../../../styling/CountryInfo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <PieChart fx:id="teamChart" animated="false" legendVisible="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="390.0" />
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="2.0">
+         <children>
+<!--            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="100.0" prefWidth="10.0" spacing="5.0">-->
+<!--               <children>-->
+<!--                  <Circle radius="7.0" styleClass="circle" />-->
+<!--                  <Label maxWidth="-Infinity" prefWidth="120.0" text="Salary overhead" />-->
+<!--                  <Label fx:id="salaryOverhead" maxWidth="-Infinity" prefWidth="100.0" text="Label" />-->
+<!--               </children>-->
+<!--            </HBox>-->
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Circle radius="7.0" styleClass="circle" />
+                  <Label maxWidth="-Infinity" prefWidth="120.0" text="DayRate" />
+                  <Label fx:id="totalOverheadDaily" maxWidth="-Infinity" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Circle radius="7.0" styleClass="circle" />
+                  <Label maxWidth="-Infinity" prefWidth="120.0" text="HourRate" />
+                  <Label fx:id="totalOverheadHourly" maxWidth="-Infinity" prefWidth="100.0" text="Label" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

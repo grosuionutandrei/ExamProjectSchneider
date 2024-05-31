@@ -1,0 +1,73 @@
+.countryBackground{
+-fx-background-color: rgb(82, 80, 80)
+}
+
+
+
+/*style the close button*/
+.closeContainer{
+    -fx-background-radius: 0 25 0 0;
+
+}
+
+/*style the close button when hover*/
+.closeContainer:hover{
+    -fx-background-color: #C42B1C;
+    -fx-background-radius: 0 25 0 0;
+}
+
+.countryContainer{
+    -fx-background-radius: 25 25 0 0;
+}
+.teamsContainer{
+    -fx-background-radius: 25 25 25 25;
+    -fx-background-color: rgb(82, 80, 80)
+}
+.test{
+    -fx-background-radius: 25;
+    -fx-background-color: transparent;
+}
+.teamsContainer > .viewport{
+    -fx-background-radius: 25;
+    -fx-background-color: transparent;
+}
+.teamComponent{
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+}
+
+.scroll-bar{
+    -fx-opacity: 0;
+}
+
+.label{
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.07px;
+    text-align: left;
+}
+
+.circle{
+    -fx-fill: #CCCCCC;
+}
+
+
+.mfx-combo-box:focus-within .caret .mfx-font-icon {
+    -mfx-color: #2ba746;
+}
+
+
+.mfx-combo-box:focus-within{
+    -fx-border-color: #2ba746;
+    -fx-text-fill: #2ba746;
+}
+
+.mfx-combo-box-cell:hover {
+    -fx-background-color: #56EA8C7F;
+}
+
+.mfx-combo-box-cell:selected {
+    -fx-background-color: #2ba746;
+}
+

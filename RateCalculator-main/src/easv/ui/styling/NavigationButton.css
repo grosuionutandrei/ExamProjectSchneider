@@ -1,0 +1,29 @@
+.navButton{
+-fx-fill:#000;
+    -fx-stroke-width: 1;
+}
+
+.navControl{
+}
+
+.navControl:hover{
+    -fx-background-color:#F3F2F2;
+}
+
+.navInfo{
+    -fx-font-family: Open Sans;
+   -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-align: left;
+}
+
+.navText {
+    -fx-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.hover{
+    -fx-fill: #2ba746;
+    -fx-text-fill: #2ba746;
+}

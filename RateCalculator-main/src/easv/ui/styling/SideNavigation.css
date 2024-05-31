@@ -1,0 +1,7 @@
+.navContainer{
+-fx-alignment: CENTER-LEFT;
+    -fx-background-color: #fff;
+}
+.navContainer>.viewport{
+    -fx-background-color: #fff;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="membersComponent" alignment="CENTER" maxHeight="-Infinity" maxWidth="510.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="325.0" styleClass="container" stylesheets="/easv/ui/styling/TeamMembersComponent.css" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="CENTER" maxHeight="50.0" maxWidth="90.0" minHeight="-Infinity" minWidth="42.0" prefHeight="49.0" prefWidth="90.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="teamMemberName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="40.0" prefHeight="39.0" prefWidth="79.0" textOverrun="CLIP" />
+            </children>
+        </VBox>
+      <VBox alignment="CENTER" prefHeight="50.0" prefWidth="60.0">
+         <children>
+            <Label fx:id="memberType" />
+         </children>
+      </VBox>
+        <VBox alignment="CENTER" maxHeight="50.0" maxWidth="85.0" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="utilizationInTeam" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="40.0" prefHeight="39.0" prefWidth="85.0" textOverrun="CLIP" />
+            </children>
+        </VBox>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="71.0">
+            <children>
+                <MFXTextField fx:id="utilPercentageToAdd" maxHeight="-Infinity" maxWidth="40.0" minHeight="30.0" minWidth="20.0" prefHeight="30.0" prefWidth="23.0" styleClass="percentageInput" />
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" layoutX="471.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="85.0" minHeight="-Infinity" minWidth="40.0" prefHeight="50.0" prefWidth="56.0" HBox.hgrow="ALWAYS">
+         <children>
+            <MFXCheckbox fx:id="removeTeamMember" contentDisposition="CENTER" prefHeight="29.0" prefWidth="42.0" scaleX="1.5" scaleY="1.5" textFill="#1b1a1a" />
+         </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets left="5.0" right="5.0" />
+    </padding>
+</HBox>

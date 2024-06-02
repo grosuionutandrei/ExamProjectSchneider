@@ -10,7 +10,7 @@
 
 <HBox id="popup-element" fx:id="regionInfoComponent" alignment="CENTER" maxHeight="-Infinity" maxWidth="570.0" minHeight="-Infinity" minWidth="370.0" prefHeight="60.0" prefWidth="445.0" spacing="7.0" styleClass="component" stylesheets="/easv/ui/styling/GeographyPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="125.0" HBox.hgrow="ALWAYS">
             <children>
                 <Label fx:id="nameLB" prefHeight="39.0" prefWidth="89.0" wrapText="true" />
             </children>
@@ -18,12 +18,12 @@
                 <Insets left="15.0" />
             </padding>
         </VBox>
-        <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER" prefHeight="60.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
             <children>
                 <Label fx:id="countryLB" prefHeight="44.0" prefWidth="115.0" />
             </children>
         </VBox>
-      <Region prefHeight="60.0" prefWidth="50.0" />
+      <Region prefHeight="60.0" prefWidth="30.0" />
         <VBox alignment="CENTER" prefHeight="60.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
             <children>
                 <Label fx:id="teamLB" prefHeight="35.0" prefWidth="93.0" />

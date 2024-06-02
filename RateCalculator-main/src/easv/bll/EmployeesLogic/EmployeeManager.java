@@ -200,13 +200,12 @@ public class EmployeeManager implements IEmployeeManager {
      * @param filteredTeams the  teams resulted from the filter operation
      */
     public BigDecimal calculateGroupTotalDayRate(List<Team> filteredTeams) {
-        System.out.println(filteredTeams.size());
+
         BigDecimal teamsDayRateSum = BigDecimal.ZERO;
         for (Team teams : filteredTeams) {
             TeamConfiguration teamConfiguration = teams.getActiveConfiguration();
             if (teamConfiguration != null) {
                 BigDecimal teamDayRate = teamConfiguration.getTeamDayRate();
-                System.out.println(teamDayRate + "teamDayRate");
                 if (teamDayRate != null) {
                     teamsDayRateSum = teamsDayRateSum.add(teamDayRate);
                 }

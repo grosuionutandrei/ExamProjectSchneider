@@ -48,7 +48,7 @@ public class GeographyManagementController implements Initializable, GeographyIn
     @FXML
     private Button addRegionBTN, addCountryBTN;
     @FXML
-    private HBox regionSearchContainer;
+    private HBox regionSearchContainer, searchCountryContainer;
 
     private IModel model;
     private StackPane pane;
@@ -158,6 +158,7 @@ public class GeographyManagementController implements Initializable, GeographyIn
 
     /**
      * Adds a region component to the UI.
+     *
      * @param region the region object
      */
     public void addRegionComponent(Region region) {
@@ -195,6 +196,7 @@ public class GeographyManagementController implements Initializable, GeographyIn
 
     /**
      * Enables the stack pane.
+     *
      * @param node the node to be enabled
      */
     private void enableStackPane(Node node) {
@@ -215,6 +217,7 @@ public class GeographyManagementController implements Initializable, GeographyIn
 
     /**
      * Retrieves the parent node.
+     *
      * @return the parent node
      */
     public Parent getCreatePage() {
@@ -223,7 +226,8 @@ public class GeographyManagementController implements Initializable, GeographyIn
 
     /**
      * Shows the operation status.
-     * @param value the status message
+     *
+     * @param value    the status message
      * @param duration the duration for which the status message will be displayed
      */
     public void showOperationStatus(String value, Duration duration) {
@@ -251,6 +255,9 @@ public class GeographyManagementController implements Initializable, GeographyIn
         SearchRegionHandler searchRegionHandler = new SearchRegionHandler(this);
         SearchController<Region> searchRegion = new SearchController<>(searchRegionHandler);
         regionSearchContainer.getChildren().add(0, searchRegion.getSearchRoot());
+        SearchCountryHandler searchCountryHandler = new SearchCountryHandler(this);
+        SearchController<Country> searchController = new SearchController<>(searchCountryHandler);
+        searchCountryContainer.getChildren().add(0, searchController.getSearchRoot());
 
     }
 
@@ -272,23 +279,27 @@ public class GeographyManagementController implements Initializable, GeographyIn
         Region region = model.getRegionById(entityId);
         DeleteRegionController deleteRegionController = new DeleteRegionController(pane, model, region, this);
         RegionComponent regionComponent = new RegionComponent(model, pane, region, deleteRegionController, this);
-        System.out.println(region);
         regionsVBox.getChildren().add(regionComponent.getRoot());
     }
 
     @Override
     public ObservableList<Country> getCountriesForSearch(String filter) {
-        return null;
+        return model.getCountryFilterResults(filter);
     }
 
     @Override
     public void performSelectSearchOperationCountry(int entityId) {
-
+        Country country = model.getCountryById(entityId);
+        countriesVBox.getChildren().clear();
+        DeleteCountryController deleteCountryController = new DeleteCountryController(pane, model, country, this);
+        CountryComponent countryComponent = new CountryComponent(model, pane, country, deleteCountryController, this, secondPane);
+        countriesVBox.getChildren().add(countryComponent.getRoot());
     }
 
     @Override
     public void undoSearchOperationCountry() {
-
+        this.countriesVBox.getChildren().clear();
+        this.displayCountries();
     }
 
     @Override

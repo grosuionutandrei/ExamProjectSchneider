@@ -85,5 +85,13 @@
     -fx-background-radius: 5px; /* Rounded corners */
     -fx-border-radius: 6px; /* Rounded corners */
 }
+.addTeamButton{
+    -fx-background-color:  #63B2E1;
+    -fx-text-fill: #fff;
+}
 
+.addTeamButton:hover{
+    -fx-background-color: #209be5;
+    -fx-text-fill: #143664;
+}
 

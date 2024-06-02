@@ -181,7 +181,7 @@
                               </VBox>
                               <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="36.0">
                                  <children>
-                                    <Button fx:id="addTeamBT" mnemonicParsing="false" text="+">
+                                    <Button fx:id="addTeamBT" alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="20.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="addTeamButton" text="+" VBox.vgrow="ALWAYS">
                                        <VBox.margin>
                                           <Insets top="5.0" />
                                        </VBox.margin>
@@ -213,9 +213,9 @@
                                     <Insets left="30.0" />
                                  </GridPane.margin>
                               </ListView>
-                              <Button fx:id="removeTeamBT" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Button fx:id="removeTeamBT" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="20.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="addTeamButton" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
-                                    <Insets left="15.0" />
+                                    <Insets left="10.0" />
                                  </GridPane.margin>
                                  <font>
                                     <Font name="System Bold" size="14.0" />

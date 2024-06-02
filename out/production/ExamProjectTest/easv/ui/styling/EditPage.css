@@ -1,0 +1,102 @@
+.editContainer {
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius: 0 0 25 25;
+    -fx-border-radius: 25;
+}
+.inputFields >{
+    -fx-background-color: #F9F9F9;
+    -fx-background-radius: 25 ;
+}
+
+.topRoundedCorners{
+    -fx-background-radius: 25 25 0 0;
+    -fx-background-color: #CCCCCC;
+}
+.leftRoundedCorner{
+    -fx-background-radius: 30 0 0 0;
+    -fx-background-color: #CCCCCC;
+}
+
+.label{
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.07px;
+    text-align: left;
+}
+
+.closeButton:hover {
+    -fx-background-color: #C42B1C;
+    -fx-background-radius:  0 25 0 0 ;
+}
+
+.closeButton:hover > .svgClose {
+    -fx-fill: #fff;
+}
+
+.saveButton:hover {
+    -fx-background-color: #2ba746;
+}
+
+.saveButton:hover > .svgSave {
+    -fx-fill: #fff;
+}
+
+.mfx-text-field:focus-within {
+    -fx-background-insets: 2;
+    -fx-border-color: #2ba746;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+    -fx-text-fill: #2ba746;
+}
+
+.spinnerLayer {
+    -fx-background-color: transparent;
+}
+
+.percentage:error {
+    -fx-border-color: #C42B1C;
+    -fx-text-fill: #C42B1C;
+}
+
+.digits:error {
+    -fx-border-color: #C42B1C;
+    -fx-text-fill: #C42B1C;
+}
+
+.letters:error {
+    -fx-border-color: #C42B1C;
+    -fx-text-fill: #C42B1C;
+}
+
+.mfx-combo-box:focus-within .caret .mfx-font-icon {
+    -mfx-color: #2ba746;
+}
+
+
+.mfx-combo-box:focus-within{
+    -fx-border-color: #2ba746;
+    -fx-text-fill: #2ba746;
+}
+
+.mfx-combo-box-cell:hover {
+    -fx-background-color: #56EA8C7F;
+}
+
+.mfx-combo-box-cell:selected {
+    -fx-background-color: #2ba746;
+}
+
+
+.chosenBox{
+-fx-background-radius: 25 ;
+}
+
+.chosenTeams .scroll-bar{
+ -fx-opacity: 0;
+}
+
+
+
+
+

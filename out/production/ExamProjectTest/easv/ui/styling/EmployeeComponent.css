@@ -1,0 +1,55 @@
+
+.employeeComponent {
+    -fx-background-color: #ffffff; /* Button color */
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent; /* No border initially */
+    -fx-border-radius: 17px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0), 0, 0, 0, 0);
+    -fx-transition: all 0.3s;
+}
+
+.employeeComponent:hover {
+    -fx-border-color: #cccccc; /* Border color on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5); /* Shadow on hover */
+}
+
+.employeeComponentClicked{
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(86,234,140,0.5), 10, 0, 0, 5);
+}
+.employeeComponentClicked:hover{
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(86,234,140,0.5), 10, 0, 0, 5);
+}
+
+.editbuttonBackground:hover{
+    -fx-background-color:#63b2e1;
+    -fx-background-radius: 5;
+}
+
+
+.editbuttonBackground:hover > .svgFill{
+    -fx-fill:#63b2e1 ;
+    -fx-stroke: #fff;
+}
+
+.tooltip {
+    -fx-background-color: #63b2e1; /* Blue background color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-weight: bold; /* Font weight */
+    -fx-padding: 5px 10px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+
+
+
+
+
+
+

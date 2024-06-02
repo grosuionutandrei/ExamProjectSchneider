@@ -1,0 +1,73 @@
+
+.distributioParent{
+    -fx-background-color: #F9F9F9;
+}
+
+/*style the list view  that display the teams  to distribute to */
+.teamsListView {
+    -fx-background-color: #d1d0d0;
+}
+
+.teamsListView .scroll-bar {
+    -fx-opacity: 0;
+}
+
+.list-view .viewport {
+    -fx-background-color: #d1d0d0
+}
+
+.teamsListView .list-cell {
+    -fx-background-color: transparent;
+    -fx-pref-width: 250;
+    -fx-max-width: 520;
+    -fx-min-width: 250;
+    -fx-background-radius: 20;
+}
+
+/*style the scrollPane that is holding the teams*/
+.teamsScrollPane {
+    -fx-background-radius: 0 0 25 25;
+    -fx-background-color: #D1D0D0;
+}
+
+.teamsScrollPane .scroll-bar {
+    -fx-opacity: 0;
+}
+
+.totalOverhead{
+    -fx-text-fill: #2ba746 ;
+}
+
+.totalOverheadContainer {
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: #e8f5e9;
+}
+
+/*change the  total overhead label style to error*/
+.totalOverheadContainer:errorLimit .totalOverhead{
+  -fx-text-fill: #a6492b ;
+}
+
+
+/*TODO remove if do not use  them annymore*/
+.circleAnimation:errorLimit {
+    -fx-stroke: #a6492b;
+}
+
+.circleAnimation {
+    -fx-stroke: #2ba746;
+}
+.interactiveButtons{
+    -fx-background-color:  #63B2E1;
+    -fx-text-fill: #fff;
+}
+
+.interactiveButtons:hover{
+    -fx-background-color: #209be5;
+    -fx-text-fill: #143664;
+}
+
+
+
+

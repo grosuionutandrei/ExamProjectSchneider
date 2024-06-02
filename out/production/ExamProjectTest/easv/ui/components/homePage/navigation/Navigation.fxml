@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="navComponent" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="250.0" styleClass="navControl" stylesheets="@../../../styling/NavigationButton.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox fx:id="navIcon" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
+            <children>
+
+            </children>
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin>
+        </HBox>
+      <Region prefHeight="200.0" prefWidth="200.0" />
+      <Label fx:id="navText" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" styleClass="navText" text="Distribution">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Region prefHeight="200.0" prefWidth="200.0" />
+      <HBox fx:id="navArrow" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" visible="false">
+         <children>
+            <SVGPath content="M97.64,44.1,64.72,11.18a8.06,8.06,0,1,0-11.4,11.39L72.78,42H8.06a8.06,8.06,0,0,0,0,16.12H72.6L53.32,77.43a8.06,8.06,0,0,0,11.4,11.39L97.64,55.9A8,8,0,0,0,100,50.2a1.27,1.27,0,0,0,0-.2,1.41,1.41,0,0,0,0-.2A8.07,8.07,0,0,0,97.64,44.1Z" fillRule="EVEN_ODD" scaleX="0.2" scaleY="0.2">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </SVGPath>
+         </children>
+      </HBox>
+    </children>
+</HBox>

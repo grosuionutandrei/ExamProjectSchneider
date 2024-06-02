@@ -1,0 +1,55 @@
+.background{
+    -fx-background-color: rgb(82, 80, 80);
+    -fx-background-radius: 20;
+}
+
+.containers{
+    -fx-background-color: #818181;
+    -fx-background-radius: 20;
+}
+
+.scrollPane{
+    -fx-background-color: transparent;
+}
+.label{
+    -fx-text-fill: #eaeaea;
+}
+.membersLabel{
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 14px;
+}
+
+.textField{
+    -fx-background-color: #818181 ;
+}
+.tooltip {
+    -fx-background-color: #63b2e1; /* Blue background color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-weight: bold; /* Font weight */
+    -fx-padding: 5px 10px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+.scroll-bar {
+    -fx-opacity: 0;
+}
+
+.closeButton:hover {
+    -fx-background-color: #C42B1C;
+    -fx-background-radius:  7 ;
+}
+
+.closeButton:hover > .svgClose {
+    -fx-fill: #fff;
+}
+
+.saveButton:hover {
+    -fx-background-color: #2ba746;
+    -fx-background-radius: 7;
+}
+
+.saveButton:hover > .svgSave {
+    -fx-fill: #fff;
+}

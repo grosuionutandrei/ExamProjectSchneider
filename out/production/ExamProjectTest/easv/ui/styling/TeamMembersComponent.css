@@ -1,0 +1,50 @@
+.container{
+    -fx-background-color:  #D1D0D0;
+    -fx-background-radius: 20;
+}
+.label{
+    -fx-text-fill: #2c2a2a;
+}
+.percentageInput{
+    -fx-background-insets: 2;
+    -fx-border-color: #cecdcd;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+
+
+}
+.percentageInput:error{
+    -fx-background-insets: 2;
+    -fx-border-color: #e73018;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+
+
+}
+.percentageInput:focus-within{
+    -fx-background-insets: 2;
+    -fx-border-color: #2ba746;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+    -fx-text-fill: #0e0801;
+}
+.mfx-checkbox .box {
+    -fx-border-color: transparent; /* Border color of the checkbox */
+}
+
+.mfx-checkbox .mark {
+    -fx-background-color: #e73018; /* Background color of the mark when checked */
+}
+
+.mfx-checkbox:hover .box {
+    -fx-border-color: #e73c22; /* Border color when hovered */
+}
+/*.mfx-checkbox .ripple-container .box .mark {
+    -fx-background-color: #e73018; /* Background color of the mark when checked */
+
+.mfx-checkbox .ripple-container .box {
+    -fx-background-color: #e73018; /* Background color of the mark when checked */
+}
+
+
+

@@ -1,0 +1,88 @@
+.tooltip {
+    -fx-background-color: #63b2e1; /* Blue background color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-weight: bold; /* Font weight */
+    -fx-padding: 5px 10px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+
+.teamComponent {
+    -fx-background-color:  F8F8F8;
+    -fx-background-radius: 20px;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent; /* No border initially */
+    -fx-border-radius: 17px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0), 0, 0, 0, 0);
+    -fx-transition: all 0.3s;
+}
+
+.teamComponent:hover {
+    -fx-border-color: #cccccc; /* Border color on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5); /* Shadow on hover */
+}
+
+.teamComponentClicked{
+    -fx-border-color: #cecdcd; /* Border color on hover */
+    -fx-effect: dropshadow(gaussian, rgb(64, 227, 91), 10, 0, 0, 5); /* Shadow on hover */
+}
+.parent{
+    -fx-background-color: F9F9F9;
+}
+
+.scroll-bar {
+    -fx-opacity: 0;
+}
+.teams {
+    -fx-text-fill: rgba(47, 46, 46, 1);
+    -fx-font-family: Open Sans;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+}
+.combo-box{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+
+
+}
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+}
+
+.list-view .viewport {
+    -fx-border-radius: 0 0 5 5;
+    -fx-background-radius: 0 0 5 5;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #102c57;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.list-view .list-cell:hover {
+    -fx-text-fill: #081a2d;
+    -fx-background-color: #c2d1e2;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #39c440;
+    -fx-text-fill: #c2d1e2;
+}
+.editbuttonBackground:hover{
+    -fx-background-color:#63b2e1;
+    -fx-background-radius: 5;
+}
+
+
+.editbuttonBackground:hover > .svgFill{
+    -fx-fill:#63b2e1 ;
+    -fx-stroke: #fff;
+}

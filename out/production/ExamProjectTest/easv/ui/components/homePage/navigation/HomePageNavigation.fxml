@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?><?import javafx.scene.image.Image?><?import javafx.geometry.Insets?>
+
+
+    <ImageView  fitHeight="80.0" fitWidth="130" pickOnBounds="true" preserveRatio="true"  style="-fx-background-color:  #F2F3F2" >
+        <image>
+            <Image url="@../../../../resources/images/image-200x80.jpg" />
+        </image>
+        <HBox.margin>
+            <Insets left="50.0" />
+        </HBox.margin></ImageView>
+
+

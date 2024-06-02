@@ -1,0 +1,15 @@
+.mainPage_header{
+    -fx-background-color: #F2F3F2;
+}
+.mainPage_menuHolder{
+    -fx-background-color: #fff;
+}
+
+.modalLayout{
+    -fx-background-color: transparent;
+
+}
+
+.navigationButton{
+    -fx-background-color:  #F2F3F2;
+}

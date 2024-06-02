@@ -1,0 +1,92 @@
+
+
+.teamComponent{
+    -fx-background-radius: 20;
+    -fx-background-color: F8F8F8;
+    -fx-border-radius: 20;
+    -fx-padding: 10px  10px ;
+    -fx-text-fill: rgba(47, 46, 46, 1) ;
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+}
+
+.teamComponent .label{
+    -fx-text-fill: rgba(47, 46, 46, 1) !important;
+}
+
+.teamComponent:hover {
+    -fx-border-color: #cccccc; /* Border color on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5); /* Shadow on hover */
+}
+
+
+.teamComponentClicked{
+    -fx-border-color: #cccccc;
+    -fx-effect: dropshadow(gaussian, rgba(86,234,140,0.5), 10, 0, 0, 5);
+}
+
+
+.distributionPercentageInput:focus-within{
+    -fx-background-insets: 2;
+    -fx-border-color: #2ba746;
+    -fx-border-width: 1.5;
+    -fx-border-insets: -0.5;
+    -fx-text-fill: #2ba746;
+}
+
+
+.tooltipinfo{
+    -fx-background-color: #63b2e1;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.teamComponent:inputError{
+    -fx-background-color: #C42B1C;
+
+}
+
+
+
+.teamComponent:inputError  .label{
+    -fx-text-fill: #fff !important;
+}
+.teamComponent:inputError .removeButton{
+    -fx-stroke:#fff;
+    -fx-fill:#C42B1C ;
+}
+
+.removeButton{
+    -fx-stroke:#2ba746;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-width: 1.5;
+}
+
+.removeButtonContainer:hover{
+    -fx-background-color:  #63b2e1 ;
+    -fx-background-radius: 5;
+}
+
+.removeButtonContainer:hover .removeButton{
+    -fx-stroke: #fff;
+    -fx-fill:#63b2e1 ;
+}
+
+
+
+/*.selected-component{*/
+/*    -fx-background-color: #63b2e1 !important;*/
+/*    -fx-background-radius: 20 !important;*/
+/*    -fx-border-radius: 20 !important;*/
+/*    -fx-text-fill: white !important;*/
+/*}*/
+
+
+
+
+

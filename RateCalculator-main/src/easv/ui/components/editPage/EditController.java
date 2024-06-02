@@ -210,7 +210,7 @@ public class EditController implements Initializable {
         this.saveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (EmployeeValidation.areNamesValid(nameInput) &&
                     EmployeeValidation.areNumbersValid(salaryTF, workingHoursTF, annualAmountTF, dayWorkingHoursInput) &&
-                    EmployeeValidation.arePercentagesValid(multiplierTF) &&
+                    EmployeeValidation.isOverheadMultiplierValid(multiplierTF) &&
                     EmployeeValidation.isItemSelected(currencyCB, overOrResourceCB)) {
                 Configuration editedConfiguration = getConfiguration();
                 Employee editedEmployee = getEmployee(editedConfiguration);

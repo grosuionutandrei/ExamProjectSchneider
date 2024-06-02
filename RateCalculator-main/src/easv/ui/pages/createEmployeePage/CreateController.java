@@ -62,7 +62,7 @@ public class CreateController implements Initializable {
     private ObservableList<Team> teams;
     private ObservableList<Region> regions;
     private List<Team> teamsList;
-    private List<Integer> teamsUtilizationList;
+    private List<Double> teamsUtilizationList;
     private IModel model;
     private Service<Void> saveEmployee;
     private StackPane firstLayout;
@@ -103,7 +103,7 @@ public class CreateController implements Initializable {
     private void saveEmployee() throws RateException {
         if(EmployeeValidation.areNamesValid(nameTF, teamsListView) &&
            EmployeeValidation.areNumbersValid(salaryTF, workingHoursTF, annualAmountTF, dayWorkingHours) &&
-           EmployeeValidation.arePercentagesValid(multiplierTF, teamsUtilizationList) &&
+           EmployeeValidation.isOverheadMultiplierValid(multiplierTF, teamsUtilizationList) &&
            EmployeeValidation.isItemSelected(currencyCB, overOrResourceCB))
         {
             enableSpinner();
@@ -118,7 +118,7 @@ public class CreateController implements Initializable {
             BigDecimal annualSalary = new BigDecimal(convertToDecimalPoint(salaryTF.getText().trim()));
             BigDecimal fixedAnnualAmount = new BigDecimal(convertToDecimalPoint(annualAmountTF.getText().trim()));
             BigDecimal overheadMultiplier = new BigDecimal(convertToDecimalPoint(multiplierTF.getText().trim()));
-            BigDecimal utilizationPercentage = new BigDecimal(teamsUtilizationList.stream().mapToInt(Integer::intValue).sum());
+            BigDecimal utilizationPercentage = BigDecimal.valueOf(teamsUtilizationList.stream().mapToDouble(Double::doubleValue).sum());
             BigDecimal workingHours = new BigDecimal(convertToDecimalPoint(workingHoursTF.getText().trim()));
             LocalDateTime savedDate = LocalDateTime.now();
             boolean isActive = true;
@@ -224,12 +224,12 @@ public class CreateController implements Initializable {
      */
     private void addTeamButtonListener(){
         addTeamBT.addEventHandler(MouseEvent.MOUSE_CLICKED, (e)->{
-            if(EmployeeValidation.isTeamSelected(teamCB) && EmployeeValidation.isPercentageValid(utilPercentageTF)){
+            if(EmployeeValidation.isTeamSelected(teamCB) && EmployeeValidation.isUtilizationValueValid(utilPercentageTF)){
                     Team team = (Team) teamCB.getSelectedItem();
-                    BigDecimal utilizationPercentage = new BigDecimal(utilPercentageTF.getText());
+                    BigDecimal utilizationPercentage = BigDecimal.valueOf(Double.parseDouble(convertToDecimalPoint(utilPercentageTF.getText())));
                     team.setUtilizationPercentage(utilizationPercentage);
                     teamsList.add(team);
-                    teamsUtilizationList.add(Integer.valueOf(utilPercentageTF.getText()));
+                    teamsUtilizationList.add(Double.valueOf(convertToDecimalPoint(utilPercentageTF.getText())));
                     String teamWithUtilization = team.getTeamName() + ",  " + utilPercentageTF.getText() + "%";
                     teamsListView.getItems().add(teamWithUtilization);
                     regionCB.clearSelection();

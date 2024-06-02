@@ -16,7 +16,7 @@ class EmployeeValidationTest {
         //Arrange
         BigDecimal  overHeadZero =  BigDecimal.ZERO;
         //Act
-        boolean isInRange = EmployeeValidation.isPercentageValid(overHeadZero);
+        boolean isInRange = EmployeeValidation.isUtilizationValueValid(overHeadZero);
         //Assert
         assertTrue(isInRange);
     }
@@ -26,7 +26,7 @@ class EmployeeValidationTest {
     @Test
     void isPercentageValidHundred(){
         BigDecimal overHeadHundred =  BigDecimal.valueOf(100);
-        boolean isInRange =  EmployeeValidation.isPercentageValid(overHeadHundred);
+        boolean isInRange =  EmployeeValidation.isUtilizationValueValid(overHeadHundred);
         assertTrue(isInRange);
     }
 
@@ -35,7 +35,7 @@ class EmployeeValidationTest {
     @Test
     void isPercentageValidOverLimit(){
         BigDecimal overHundred = BigDecimal.valueOf(101);
-        boolean isInRange = EmployeeValidation.isPercentageValid(overHundred);
+        boolean isInRange = EmployeeValidation.isUtilizationValueValid(overHundred);
         assertFalse(isInRange);
     }
 
@@ -44,7 +44,7 @@ class EmployeeValidationTest {
     @Test
     void isPercentageValidUnderLimit(){
         BigDecimal overHundred = BigDecimal.valueOf(99);
-        boolean isInRange = EmployeeValidation.isPercentageValid(overHundred);
+        boolean isInRange = EmployeeValidation.isUtilizationValueValid(overHundred);
         assertTrue(isInRange);
     }
 

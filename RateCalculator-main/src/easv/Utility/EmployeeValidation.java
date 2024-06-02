@@ -39,13 +39,13 @@ public class EmployeeValidation {
     /**
      * validate the user inputs for the add operation
      */
-    public static boolean arePercentagesValid(MFXTextField overheadMultiplier, List<Integer> utilizationPercentages) {
+    public static boolean isOverheadMultiplierValid(MFXTextField overheadMultiplier, List<Double> utilizationPercentages) {
         boolean isValid = true;
-        if (utilizationPercentages.stream().mapToInt(Integer::intValue).sum() > 100) {
+        if (utilizationPercentages.stream().mapToDouble(Double::doubleValue).sum() > 100) {
             ExceptionHandler.errorAlertMessage("The sum of the Utilization % should be less than or equal to 100.");
             return false;
         }
-        for (int percentage : utilizationPercentages) {
+        for (double percentage : utilizationPercentages) {
             String utilizationText = String.valueOf(percentage);
             if (!utilizationText.matches(validPercentagePattern)) {
                 ExceptionHandler.errorAlertMessage("The Utilization % should be a number.");
@@ -82,7 +82,7 @@ public class EmployeeValidation {
     /**
      * validate the user inputs for the add operation
      */
-    public static boolean arePercentagesValid(MFXTextField overheadMultiplier) {
+    public static boolean isOverheadMultiplierValid(MFXTextField overheadMultiplier) {
         boolean isValid = true;
 
         String overheadMultiplierText = overheadMultiplier.getText();
@@ -96,7 +96,7 @@ public class EmployeeValidation {
             return false;
         } else {
             BigDecimal multiplierValue = new BigDecimal(convertToDecimalPoint(overheadMultiplierText));
-            if (!isPercentageValid(multiplierValue)) {
+            if (!isUtilizationValueValid(multiplierValue)) {
                 overheadMultiplier.pseudoClassStateChanged(ERROR_PSEUDO_CLASS, true);
                 ExceptionHandler.errorAlertMessage("The Overhead Multiplier % should be between 0 and 100.");
                 return false;
@@ -105,7 +105,7 @@ public class EmployeeValidation {
         return isValid;
     }
 
-    public static boolean isPercentageValid(MFXTextField percentageField) {
+    public static boolean isUtilizationValueValid(MFXTextField percentageField) {
         boolean isValid = true;
         String percentageText = percentageField.getText();
         if (percentageText.isEmpty()) {
@@ -117,8 +117,8 @@ public class EmployeeValidation {
             ExceptionHandler.errorAlertMessage("The Utilization % should be a number.");
             return false;
         } else {
-            int multiplierValue = Integer.parseInt(percentageText);
-            if (!isPercentageInLimits(multiplierValue)) {
+        BigDecimal multiplierValue = new BigDecimal(convertToDecimalPoint(percentageText));
+            if (!isUtilizationValueValid(multiplierValue)) {
                 percentageField.pseudoClassStateChanged(ERROR_PSEUDO_CLASS, true);
                 ExceptionHandler.errorAlertMessage("The Utilization % should be between 0 and 100.");
                 return false;
@@ -454,14 +454,8 @@ public class EmployeeValidation {
     }
 
     //check if the multiplier is between 0 and 100
-    public static boolean isPercentageValid(BigDecimal value) {
+    public static boolean isUtilizationValueValid(BigDecimal value) {
         return value.compareTo(BigDecimal.ZERO) >= 0 && value.compareTo(new BigDecimal("100")) <= 0;
-    }
-
-
-    //check if the percentage is between 0 and 100;
-    public static boolean isPercentageInLimits(int percentage) {
-        return percentage > 0 && percentage <= 100;
     }
 
     // check if the salary is bigger than zero

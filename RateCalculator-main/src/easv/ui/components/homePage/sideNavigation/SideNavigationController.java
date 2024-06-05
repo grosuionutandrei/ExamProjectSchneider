@@ -1,7 +1,6 @@
 package easv.ui.components.homePage.sideNavigation;
 
 import easv.be.Navigation;
-import easv.ui.components.homePage.callBackFactory.CallBackFactory;
 import easv.ui.components.homePage.NavigationFactory.NavigationFactory;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -21,16 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-
+/**dynamically creates the navigation controllers, received trough dependency injection,
+ * by calling the NavigationFactory to create the actual component*/
 public class SideNavigationController implements Initializable {
-    @FXML
-    private VBox iconsContainer;
+
     @FXML
     private VBox upperSection,lowerSection;
     @FXML
     private ScrollPane sideNavigationContainer;
-    @FXML
-    private Line theLine;
     private boolean isExpanded;
     private static   final double expandedWidth=300;
     private static   final double originalWidth = 90;
@@ -38,7 +35,7 @@ public class SideNavigationController implements Initializable {
     private List<Navigation> lowerSectionNavigation;
 
 
-//Todo modify the sideNavigationController to receive a list of Enums
+
     public SideNavigationController(List<Navigation> upperSectionNavigation,List<Navigation>lowerSectionNavigation) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SideNavigation.fxml"));
         loader.setController(this);
@@ -54,40 +51,20 @@ public class SideNavigationController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        populateUpperNavigation(this.upperSection,upperSectionNavigation);
-        populateLowerNavigation(this.lowerSection,lowerSectionNavigation);
+        populateNavigation(this.upperSection,upperSectionNavigation);
+        populateNavigation(this.lowerSection,lowerSectionNavigation);
         addOnEnterListener();
         addOnExitListener();
     }
 
-
-    private void populateUpperNavigation(VBox upperSection,List<Navigation>  upperSectionNavigation) {
-       List<HBox> navigations = new ArrayList<>();
-       for(Navigation navigation : upperSectionNavigation){
-           navigations.add(NavigationFactory.getNavigationComponent(navigation));
-       }
-
-       upperSection.getChildren().addAll(navigations);
-//        HBox distribution = NavigationFactory.getNavigationComponent(Navigation.DISTRIBUTION);
-//        HBox create = NavigationFactory.getNavigationComponent(Navigation.CREATE);
-//        HBox employees = NavigationFactory.getNavigationComponent(Navigation.EMPLOYEES);
-//        HBox modeling = NavigationFactory.getNavigationComponent(Navigation.MODELING);
-     //   HBox geography = NavigationFactory.getNavigationComponent(Navigation.GEOGRAPHY);
-//        upperSection.getChildren().add( distribution);
-//        upperSection.getChildren().add( create);
-//        upperSection.getChildren().add(employees);
-//        upperSection.getChildren().add( modeling);
-   //    lowerSection.getChildren().add( geography);
+    private void populateNavigation(VBox section, List<Navigation> navigationList) {
+        section.getChildren().clear();
+        List<HBox> navigations = new ArrayList<>();
+        for (Navigation navigation : navigationList) {
+            navigations.add(NavigationFactory.getNavigationComponent(navigation));
+        }
+        section.getChildren().addAll(navigations);
     }
-
-    private void populateLowerNavigation(VBox lowerSection,List<Navigation> lowerNavigation){
-      List<HBox> navigations = new ArrayList<>();
-        for(Navigation navigation:lowerNavigation){
-          navigations.add(NavigationFactory.getNavigationComponent(navigation));
-      }
-        lowerSection.getChildren().addAll(navigations);
-    }
-
 
 
     public ScrollPane getRoot() {
@@ -124,11 +101,11 @@ public class SideNavigationController implements Initializable {
      *@param section the section where the new navigation component will be added(upper section/lower section)*/
     public void addNavigation(Navigation navigation,Section section) {
         switch(section){
-            case UPPER -> {  this.upperSectionNavigation.add(navigation);
-                populateUpperNavigation(upperSection,upperSectionNavigation);}
+            case UPPER -> {this.upperSectionNavigation.add(navigation);
+                upperSection.getChildren().add(NavigationFactory.getNavigationComponent(navigation));}
             case LOWER -> {
                 this.lowerSectionNavigation.add(navigation);
-                populateLowerNavigation(lowerSection,lowerSectionNavigation);
+                lowerSection.getChildren().add(NavigationFactory.getNavigationComponent(navigation));
             }
         }
     }
@@ -140,11 +117,11 @@ public class SideNavigationController implements Initializable {
         switch(section){
             case UPPER -> {
                 this.upperSectionNavigation.remove(navigation);
-                populateUpperNavigation(upperSection,upperSectionNavigation);
+                populateNavigation(upperSection,upperSectionNavigation);
             }
             case LOWER -> {
                 this.lowerSectionNavigation.remove(navigation);
-                populateLowerNavigation(lowerSection,lowerSectionNavigation);
+                populateNavigation(lowerSection,lowerSectionNavigation);
             }
         }
     }

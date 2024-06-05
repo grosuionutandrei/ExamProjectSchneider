@@ -39,8 +39,6 @@ public class NavigationFactory {
             case GEOGRAPHY ->  {
                 navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.GEOGRAPHY),IconsText.GEOGRAPHY.value);
             }
-
-
         }
 
         return navigationController.getNavComponent();

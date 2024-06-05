@@ -1,3 +1,4 @@
+import easv.be.Navigation;
 import easv.exception.ErrorCode;
 import easv.exception.ExceptionHandler;
 import easv.exception.RateException;
@@ -7,6 +8,11 @@ import easv.ui.pages.modelFactory.ModelFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Main extends Application {
@@ -19,8 +25,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        //defining the navigation components that will be displayed in the side menu navigation
+        List<Navigation> upperNavigation = new ArrayList<>();
+        List<Navigation> lowerNavigation = new ArrayList<>();
+
+        //populate the lists with values
+        Collections.addAll(upperNavigation,Navigation.DISTRIBUTION,Navigation.CREATE,Navigation.EMPLOYEES,Navigation.MODELING);
+        Collections.addAll(lowerNavigation,Navigation.GEOGRAPHY);
         IModel model = initializeModel(primaryStage);
-        HomePageController homePageController = new HomePageController(model);
+        HomePageController homePageController = new HomePageController(model,upperNavigation,lowerNavigation);
         Scene scene = new Scene(homePageController.getRoot());
         primaryStage.setMinWidth(1024);
         primaryStage.setMinHeight(700);
@@ -40,4 +53,6 @@ public class Main extends Application {
         }
         return model;
     }
+
+
 }

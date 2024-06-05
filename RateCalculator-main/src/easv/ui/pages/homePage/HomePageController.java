@@ -22,6 +22,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable, PageManager {
@@ -36,12 +37,20 @@ public class HomePageController implements Initializable, PageManager {
     private HBox header;
     private Observable observer;
     private IModel model;
+    private List<Navigation> upperNavigation;
+    private List<Navigation> lowerNavigation;
 
 
+    /***
+     * creates a home page with the necessary navigation components required by the client
+     *in this case Main class is the client*/
 
-    public HomePageController( IModel model) {
+
+    public HomePageController( IModel model,List<Navigation> upperNavigation,List<Navigation> lowerNavigation) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
         loader.setController(this);
+        this.upperNavigation= upperNavigation;
+        this.lowerNavigation= lowerNavigation;
         this.model = model;
         try {
             root = loader.load();
@@ -58,7 +67,8 @@ public class HomePageController implements Initializable, PageManager {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        sideNavigation = new SideNavigationController();
+
+        sideNavigation = new SideNavigationController(upperNavigation,lowerNavigation);
         Platform.runLater(() -> {
             initializeSideMenu(menu, sideNavigation.getRoot());
         });

@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 public class FileHandler {
 
-    private final String dataBaseLoginPath = "src/easv/resources/DbLogin.txt";
+    private final String dataBaseLoginPath = "RateCalculator-main/src/easv/resources/DbLogin.txt";
 
     public String[] readDbLogin() {
         try {

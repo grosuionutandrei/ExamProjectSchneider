@@ -1,6 +1,7 @@
 package easv.ui.components.homePage.NavigationFactory;
 import easv.be.Navigation;
 import easv.ui.components.homePage.callBackFactory.CallBack;
+import easv.ui.components.homePage.callBackFactory.CallBackFactory;
 import easv.ui.components.homePage.navigation.NavigationController;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.SVGPath;
@@ -13,28 +14,30 @@ import static javafx.scene.shape.FillRule.EVEN_ODD;
  * It dynamically generates navigation items for different pages, each populated with the appropriate SVG icon,
  * text, and functionality.  */
 
+
+// TODO modfiy the method to recieve onlly the  navigation
 public class NavigationFactory {
     private final static HashMap<Navigation, SVGPath> icons = new HashMap<>();
-    public static HBox getNavigationComponent(Navigation navigation, CallBack callback) {
-       return createAndConfigureNavigation(navigation,callback);
+    public static HBox getNavigationComponent(Navigation navigation) {
+       return createAndConfigureNavigation(navigation);
     }
 
-    private static HBox createAndConfigureNavigation(Navigation navigation, CallBack callback){
+    private static HBox createAndConfigureNavigation(Navigation navigation){
         NavigationController navigationController = null;
         switch (navigation){
             case DISTRIBUTION -> {
-                navigationController = new NavigationController(icons.get(navigation),callback,IconsText.DISTRIBUTION.value);
+                navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.DISTRIBUTION),IconsText.DISTRIBUTION.value);
             }
             case CREATE ->{
-                navigationController=  new NavigationController(icons.get(navigation),callback,IconsText.CREATE.value);
+                navigationController=  new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.CREATE),IconsText.CREATE.value);
             }
             case EMPLOYEES -> {
-                navigationController = new NavigationController(icons.get(navigation),callback,IconsText.EMPLOYEES.value);
+                navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.EMPLOYEES),IconsText.EMPLOYEES.value);
             }
             case MODELING ->
-            {navigationController = new NavigationController(icons.get(navigation),callback,IconsText.MODELING.value);}
+            {navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.MODELING),IconsText.MODELING.value);}
             case GEOGRAPHY ->  {
-                navigationController = new NavigationController(icons.get(navigation),callback,IconsText.GEOGRAPHY.value);
+                navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.GEOGRAPHY),IconsText.GEOGRAPHY.value);
             }
 
 

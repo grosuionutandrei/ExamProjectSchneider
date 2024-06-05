@@ -32,6 +32,8 @@ public class Main extends Application {
         //populate the lists with values
         Collections.addAll(upperNavigation,Navigation.DISTRIBUTION,Navigation.CREATE,Navigation.EMPLOYEES,Navigation.MODELING);
         Collections.addAll(lowerNavigation,Navigation.GEOGRAPHY);
+
+        //initialize the view and model
         IModel model = initializeModel(primaryStage);
         HomePageController homePageController = new HomePageController(model,upperNavigation,lowerNavigation);
         Scene scene = new Scene(homePageController.getRoot());

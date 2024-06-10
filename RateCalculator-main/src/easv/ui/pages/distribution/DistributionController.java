@@ -164,10 +164,7 @@ public class DistributionController implements Initializable, DistributionContro
         for (Team team : overheadSimulationValues.get(OverheadHistory.CURRENT_OVERHEAD)) {
             currentOverheadSeries.getData().add(new XYChart.Data<>(team.getTeamName(), team.getActiveConfiguration().getTeamDayRate()));
         }
-        overheadSimulationValues.get(OverheadHistory.CURRENT_OVERHEAD).forEach(e -> System.out.println(e.getTeamName() + " " + e.getActiveConfiguration().getTeamDayRate()));
-        overheadSimulationValues.get(OverheadHistory.PREVIOUS_OVERHEAD).forEach(e -> {
-            System.out.println(e.getTeamName() + " " + e.getActiveConfiguration().getTeamDayRate());
-        });
+
         this.barchartAfterTheSimulation.getData().add(previousOverheadSeries);
         this.barchartAfterTheSimulation.getData().add(currentOverheadSeries);
         this.distributeToTeams.requestLayout();
@@ -342,8 +339,9 @@ public class DistributionController implements Initializable, DistributionContro
 
         });
         this.simulateService.setOnFailed((e) -> {
-            simulateService.getException().printStackTrace();
+            WindowsManagement.closeStackPane(secondLayout);
             showInfoError(ErrorCode.SIMULATION_FAILED.getValue());
+
         });
         simulateService.restart();
     }
@@ -415,6 +413,7 @@ public class DistributionController implements Initializable, DistributionContro
         });
         this.saveDistribution.setOnCancelled((e) -> {
             WindowsManagement.closeStackPane(secondLayout);
+            showInfoError(ErrorCode.OPERATION_DB_FAILED.getValue());
         });
         saveDistribution.restart();
     }

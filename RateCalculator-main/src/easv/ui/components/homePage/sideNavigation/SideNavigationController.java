@@ -1,8 +1,9 @@
 package easv.ui.components.homePage.sideNavigation;
 
 import easv.be.Navigation;
+import easv.exception.ErrorCode;
+import easv.exception.ExceptionHandler;
 import easv.ui.components.homePage.NavigationFactory.NavigationFactory;
-import easv.ui.pages.modelFactory.IModel;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -13,7 +14,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Line;
 import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
@@ -46,7 +46,7 @@ public class SideNavigationController implements Initializable {
             sideNavigationContainer =loader.load();
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            ExceptionHandler.errorAlertMessage(ErrorCode.LOADING_FXML_FAILED.getValue());
         }
     }
 

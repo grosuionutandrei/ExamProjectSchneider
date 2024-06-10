@@ -1,17 +1,13 @@
 package easv.ui.pages.homePage;
-
 import easv.be.Navigation;
 import easv.exception.ErrorCode;
 import easv.exception.ExceptionHandler;
 import easv.ui.components.common.PageManager;
 import easv.ui.components.homePage.NavigationFactory.NavigationFactory;
 import easv.ui.components.homePage.callBackFactory.CallBackFactory;
-import easv.ui.components.homePage.callBackFactory.NavigationOperation;
-import easv.ui.components.homePage.navigation.HomePageNavigationController;
 import easv.ui.components.homePage.openPageObserver.Observable;
 import easv.ui.components.homePage.openPageObserver.Subject;
 import easv.ui.components.homePage.sideNavigation.SideNavigationController;
-import easv.ui.components.map.WorldMap;
 import easv.ui.pages.modelFactory.IModel;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -23,7 +19,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;

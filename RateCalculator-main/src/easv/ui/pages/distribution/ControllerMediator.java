@@ -2,10 +2,8 @@ package easv.ui.pages.distribution;
 
 import easv.be.Team;
 import easv.ui.components.distributionPage.distributeFromTeamInfo.DistributionFromComponentInterface;
-import easv.ui.components.distributionPage.distributeToTeamInfo.DistributeToController;
 import easv.ui.components.distributionPage.distributeToTeamInfo.DistributeToInterface;
 import javafx.scene.Parent;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

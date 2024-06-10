@@ -1,22 +1,15 @@
 package easv.ui.components.homePage.NavigationFactory;
-
 import easv.be.Navigation;
 import easv.ui.components.common.PageManager;
-import easv.ui.components.homePage.callBackFactory.CallBack;
 import easv.ui.components.homePage.callBackFactory.CallBackFactory;
 import easv.ui.components.homePage.controllerFactory.*;
 import easv.ui.components.homePage.navigation.HomePageNavigationController;
 import easv.ui.components.homePage.navigation.NavigationController;
-import easv.ui.components.map.WorldMap;
-import easv.ui.pages.createEmployeePage.CreateController;
-import easv.ui.pages.homePage.HomePageController;
 import easv.ui.pages.modelFactory.IModel;
-import easv.ui.pages.teamsPage.TeamsPageController;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.SVGPath;
-
 import java.util.HashMap;
 
 import static javafx.scene.shape.FillRule.EVEN_ODD;
@@ -27,10 +20,9 @@ import static javafx.scene.shape.FillRule.EVEN_ODD;
  * text, and functionality.
  */
 
-
-// TODO modfiy the method to recieve onlly the  navigation
 public class NavigationFactory {
     private final static HashMap<Navigation, SVGPath> icons = new HashMap<>();
+    private final static HashMap<Navigation, NavigationController> navigationControllers = new HashMap<>();
     private static StackPane modalLayout, secondLayout;
     private static IModel model;
     private static PageManager pageManager;
@@ -55,34 +47,38 @@ public class NavigationFactory {
     }
 
     private static HBox createAndConfigureNavigation(Navigation navigation) {
-        NavigationController navigationController = null;
-        switch (navigation) {
-            case CREATE -> {
-                navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.CREATE, new CreateControllerFactory(model, modalLayout),pageManager), IconsText.CREATE.value);
-            }
-            case DISTRIBUTION ->{
-                navigationController=  new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.DISTRIBUTION,new CreateDistributionFactory(model,modalLayout),pageManager),IconsText.DISTRIBUTION.value);
-            }
-            case EMPLOYEES -> {
-                navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.EMPLOYEES,new EmployeePageControllerFactory(model,modalLayout),pageManager),IconsText.EMPLOYEES.value);
-            }
-            case MODELING ->
-            {navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.MODELING,new TeamPageControllerFactory(model,modalLayout),pageManager),IconsText.MODELING.value);}
-            case GEOGRAPHY ->  {
-                navigationController = new NavigationController(icons.get(navigation),CallBackFactory.createCallBack(Navigation.GEOGRAPHY,new GeographyControllerFactory(model,modalLayout,secondLayout),pageManager),IconsText.GEOGRAPHY.value);
-        }
+        NavigationController navigationController = navigationControllers.get(navigation);
+        if (navigationController != null) {
+            return navigationController.getNavComponent();
         }
 
+        switch (navigation) {
+            case CREATE ->
+                    navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.CREATE, new CreateControllerFactory(model, modalLayout), pageManager), IconsText.CREATE.value);
+
+            case DISTRIBUTION ->
+                    navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.DISTRIBUTION, new CreateDistributionFactory(model, modalLayout), pageManager), IconsText.DISTRIBUTION.value);
+
+            case EMPLOYEES ->
+                    navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.EMPLOYEES, new EmployeePageControllerFactory(model, modalLayout), pageManager), IconsText.EMPLOYEES.value);
+
+            case MODELING ->
+                    navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.MODELING, new TeamPageControllerFactory(model, modalLayout), pageManager), IconsText.MODELING.value);
+            case GEOGRAPHY ->
+                    navigationController = new NavigationController(icons.get(navigation), CallBackFactory.createCallBack(Navigation.GEOGRAPHY, new GeographyControllerFactory(model, modalLayout, secondLayout), pageManager), IconsText.GEOGRAPHY.value);
+
+        }
+        navigationControllers.put(navigation, navigationController);
         return navigationController.getNavComponent();
     }
 
     public static ImageView getHomePageNavigation() {
-        HomePageNavigationController homePageNavigationController = new HomePageNavigationController(CallBackFactory.createCallBack(Navigation.HOME, new CreateMapFactory(model, modalLayout),pageManager));
+        HomePageNavigationController homePageNavigationController = new HomePageNavigationController(CallBackFactory.createCallBack(Navigation.HOME, new CreateMapFactory(model, modalLayout), pageManager));
         return homePageNavigationController.getHomePageLogo();
     }
 
-    public static  void initializeHomePage(){
-       CallBackFactory.createCallBack(Navigation.HOME,new CreateMapFactory(model,modalLayout),pageManager).call();
+    public static void initializeHomePage() {
+        CallBackFactory.createCallBack(Navigation.HOME, new CreateMapFactory(model, modalLayout), pageManager).call();
     }
 
 
@@ -137,7 +133,7 @@ public class NavigationFactory {
     }
 
     public static void setPageHolder(PageManager pageHolder) {
-     pageManager=pageHolder;
+        pageManager = pageHolder;
     }
 
     private enum IconsText {

@@ -79,6 +79,7 @@ public class DistributionController implements Initializable, DistributionContro
         this.secondLayout = secondLayout;
         this.distributionMediator = new ControllerMediator();
         this.distributionMediator.registerDistributionController(this);
+        // reinitialize the distribution entities ,
         model.initializeDistributionEntities();
         try {
             distributionPage = loader.load();

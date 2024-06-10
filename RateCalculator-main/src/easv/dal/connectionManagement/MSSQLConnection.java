@@ -2,7 +2,6 @@ package easv.dal.connectionManagement;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import easv.exception.RateException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 

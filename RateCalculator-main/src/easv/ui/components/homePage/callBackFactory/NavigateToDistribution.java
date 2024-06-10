@@ -32,7 +32,7 @@ public class NavigateToDistribution implements CallBack,Subject {
 
     private void initializePage(){
         DistributionController distributionController = new DistributionController(model,secondLayout);
-        root=distributionController.getDistributionPage();
+        root=distributionController.getPageRoot();
     }
 
     public void setOpened(boolean opened) {

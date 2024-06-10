@@ -10,6 +10,7 @@ import easv.exception.RateException;
 import easv.ui.components.searchComponent.DataHandler;
 import easv.ui.components.searchComponent.SearchController;
 import easv.ui.components.teamsInfoComponent.TeamInfoController;
+import easv.ui.pages.PageControlable;
 import easv.ui.pages.modelFactory.IModel;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
@@ -25,13 +26,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class TeamsPageController implements Initializable, DataHandler<Team> {
+public class TeamsPageController implements Initializable, DataHandler<Team>, PageControlable {
     @FXML
     private Parent teamPage;
     @FXML
@@ -50,7 +52,9 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
     private TeamInfoController selectedTeam;
     private IModel model;
 
-    /** Initializes the controller with the necessary dependencies and loads the FXML component, not depend on FXML components being loaded*/
+    /**
+     * Initializes the controller with the necessary dependencies and loads the FXML component, not depend on FXML components being loaded
+     */
     public TeamsPageController(IModel model, StackPane firstLayout) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("TeamsManagementPage.fxml"));
         loader.setController(this);
@@ -63,15 +67,16 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
         }
 
     }
-    public Parent getRoot() {
-        return teamPage;
-    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       displayTeams();
-       intializeSearchField();
+        displayTeams();
+        intializeSearchField();
     }
-    /** Populates the teamsContainer with the teams from model */
+
+    /**
+     * Populates the teamsContainer with the teams from model
+     */
     public void displayTeams() {
         teamsContainer.getChildren().clear();
         ObservableList<HBox> teamInfoControllers = FXCollections.observableArrayList();
@@ -89,7 +94,9 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
     }
 
 
-    /** Adds green border to selected team and removes it after another is selected*/
+    /**
+     * Adds green border to selected team and removes it after another is selected
+     */
     public void setSelectedComponentStyleToSelected(TeamInfoController selectedTeam) {
         if (this.selectedTeam != null) {
             this.selectedTeam.getRoot().getStyleClass().remove("teamComponentClicked");
@@ -98,7 +105,9 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
         this.selectedTeam.getRoot().getStyleClass().add("teamComponentClicked");
     }
 
-    /** Populates LineChart based on selected year*/
+    /**
+     * Populates LineChart based on selected year
+     */
     public void yearsComboBoxListener(Team team) {
         yearComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
@@ -154,7 +163,9 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
         }
     }
 
-    /** Sets a list of team history dates in combobox of pieChart */
+    /**
+     * Sets a list of team history dates in combobox of pieChart
+     */
     public void setTeamHistoryDatesInComboBox(Team team) {
         List<TeamConfiguration> teamConfigurations = team.getTeamConfigurationsHistory();
         teamConfigurations.sort(Comparator.comparing(TeamConfiguration::getSavedDate).reversed());
@@ -217,11 +228,14 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
         }
     }
 
-    /** Adds the team search */
+    /**
+     * Adds the team search
+     */
     private void intializeSearchField() {
         SearchController<Team> searchField = new SearchController<>(this);
         this.searchField.getChildren().add(searchField.getSearchRoot());
     }
+
     @Override
     public ObservableList<Team> getResultData(String filter) {
         return model.getTeamsFilterResults(filter);
@@ -241,7 +255,7 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
         displayTeams();
     }
 
-    public void clearCharts(){
+    public void clearCharts() {
         teamsPieChart.getData().clear();
         lineChart.getData().clear();
         yearComboBox.getItems().clear();
@@ -249,4 +263,10 @@ public class TeamsPageController implements Initializable, DataHandler<Team> {
     }
 
 
+    @Override
+    public Parent getPageRoot() {
+
+        return teamPage;
+
+    }
 }

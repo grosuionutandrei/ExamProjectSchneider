@@ -2,6 +2,7 @@ package easv.ui.components.homePage.sideNavigation;
 
 import easv.be.Navigation;
 import easv.ui.components.homePage.NavigationFactory.NavigationFactory;
+import easv.ui.pages.modelFactory.IModel;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -36,7 +37,7 @@ public class SideNavigationController implements Initializable {
 
 
 
-    public SideNavigationController(List<Navigation> upperSectionNavigation,List<Navigation>lowerSectionNavigation) {
+    public SideNavigationController(List<Navigation> upperSectionNavigation, List<Navigation>lowerSectionNavigation) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SideNavigation.fxml"));
         loader.setController(this);
         this.upperSectionNavigation= new ArrayList<>(upperSectionNavigation);

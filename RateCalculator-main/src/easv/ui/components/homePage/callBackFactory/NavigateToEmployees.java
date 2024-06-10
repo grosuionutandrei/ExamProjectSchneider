@@ -33,7 +33,7 @@ public class NavigateToEmployees implements CallBack, Subject {
     private void initializeRoot(){
         EmployeeMainPageController employeeMainPageController = new EmployeeMainPageController(modalLayout);
         model.setDisplayer(employeeMainPageController);
-        root= employeeMainPageController.getRoot();
+        root= employeeMainPageController.getPageRoot();
         pageManager.changePage(root, this);
         isOpened = true;
     }

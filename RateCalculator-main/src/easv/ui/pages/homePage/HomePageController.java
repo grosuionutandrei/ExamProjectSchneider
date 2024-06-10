@@ -4,11 +4,14 @@ import easv.be.Navigation;
 import easv.exception.ErrorCode;
 import easv.exception.ExceptionHandler;
 import easv.ui.components.common.PageManager;
+import easv.ui.components.homePage.NavigationFactory.NavigationFactory;
 import easv.ui.components.homePage.callBackFactory.CallBackFactory;
+import easv.ui.components.homePage.callBackFactory.NavigationOperation;
 import easv.ui.components.homePage.navigation.HomePageNavigationController;
 import easv.ui.components.homePage.openPageObserver.Observable;
 import easv.ui.components.homePage.openPageObserver.Subject;
 import easv.ui.components.homePage.sideNavigation.SideNavigationController;
+import easv.ui.components.map.WorldMap;
 import easv.ui.pages.modelFactory.IModel;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -20,6 +23,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -46,19 +50,18 @@ public class HomePageController implements Initializable, PageManager {
      *in this case Main class is the client*/
 
 
-    public HomePageController( IModel model,List<Navigation> upperNavigation,List<Navigation> lowerNavigation) {
+    public HomePageController(IModel model, List<Navigation> upperNavigation, List<Navigation> lowerNavigation) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
         loader.setController(this);
-        this.upperNavigation= upperNavigation;
-        this.lowerNavigation= lowerNavigation;
+        this.upperNavigation = upperNavigation;
+        this.lowerNavigation = lowerNavigation;
         this.model = model;
         try {
             root = loader.load();
-            observer =CallBackFactory.getObserver();
+            observer = CallBackFactory.getObserver();
         } catch (IOException e) {
             ExceptionHandler.errorAlertMessage(ErrorCode.LOADING_FXML_FAILED.getValue());
         }
-
     }
 
     public Parent getRoot() {
@@ -67,22 +70,19 @@ public class HomePageController implements Initializable, PageManager {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        sideNavigation = new SideNavigationController(upperNavigation,lowerNavigation);
-        Platform.runLater(() -> {
-            initializeSideMenu(menu, sideNavigation.getRoot());
-        });
-        Platform.runLater(() -> {
-            sideNavigation.getRoot().getWidth();
-        });
         initializeWorldMap();
-        CallBackFactory.setPageHolder(this);
-        CallBackFactory.setModel(this.model);
-        CallBackFactory.setModalWindow(this.firstLayout);
-        CallBackFactory.setSecondLayout(this.secondLayout);
-        Platform.runLater(()->{
-            CallBackFactory.createCallBack(Navigation.HOME).call();
-        });
+        NavigationFactory.setModalWindow(this.firstLayout);
+        NavigationFactory.setSecondLayout(this.secondLayout);
+        NavigationFactory.setModel(this.model);
+        NavigationFactory.setPageHolder(this);
+        sideNavigation = new SideNavigationController(upperNavigation, lowerNavigation);
+
+        initializeSideMenu(menu, sideNavigation.getRoot());
+
+
+          //initialize  initial home page
+        Platform.runLater(NavigationFactory::initializeHomePage);
+
     }
 
     private void initializeSideMenu(StackPane stackPane, ScrollPane hBox) {
@@ -91,20 +91,17 @@ public class HomePageController implements Initializable, PageManager {
     }
 
     private void initializeWorldMap() {
-        initializeHomePageLogo();
-    }
-    private void initializeHomePageLogo(){
-        HomePageNavigationController homePageNavigationController = new HomePageNavigationController(CallBackFactory.createCallBack(Navigation.HOME));
-        header.getChildren().add(0,homePageNavigationController.getHomePageLogo());
+        header.getChildren().add(0, NavigationFactory.getHomePageNavigation());
     }
 
 
     /**
      * this method will be called by the navigation components in order to display new page,
      * the navigation components are relying on the CallBack interface  to provide their functionality,
-     * each navigation component will, receive their CallBack implementation form the CallBackFactory , when they are created */
+     * each navigation component will, receive their CallBack implementation form the CallBackFactory , when they are created
+     */
     @Override
-    public void changePage(Parent page,Subject subject) {
+    public void changePage(Parent page, Subject subject) {
         observer.modifyDisplay(subject);
         this.pageContainer.getChildren().clear();
         this.pageContainer.getChildren().add(page);

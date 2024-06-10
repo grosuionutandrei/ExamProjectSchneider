@@ -15,6 +15,7 @@ import easv.ui.components.distributionPage.teamsFilters.DistributeToFilter;
 import easv.ui.components.distributionPage.teamsFilters.SearchDistributeFromTeamHandler;
 import easv.ui.components.distributionPage.teamsFilters.SearchDistributeToTeamHandler;
 import easv.ui.components.searchComponent.SearchController;
+import easv.ui.pages.PageControlable;
 import easv.ui.pages.modelFactory.IModel;
 import io.github.palexdev.materialfx.controls.MFXProgressSpinner;
 import javafx.animation.PauseTransition;
@@ -44,7 +45,7 @@ import java.math.RoundingMode;
 import java.net.URL;
 import java.util.*;
 
-public class DistributionController implements Initializable, DistributionControllerInterface {
+public class DistributionController implements Initializable, DistributionControllerInterface , PageControlable {
     @FXML
     private Parent distributionPage;
     @FXML
@@ -88,9 +89,7 @@ public class DistributionController implements Initializable, DistributionContro
         }
     }
 
-    public Parent getDistributionPage() {
-        return distributionPage;
-    }
+
 
 
     @Override
@@ -500,5 +499,8 @@ public class DistributionController implements Initializable, DistributionContro
         distributeToTeams.setItems(FXCollections.observableArrayList(teams));
     }
 
-
+    @Override
+    public Parent getPageRoot() {
+       return distributionPage;
+    }
 }

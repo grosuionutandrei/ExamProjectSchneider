@@ -7,6 +7,7 @@ import easv.be.Team;
 import easv.exception.ErrorCode;
 import easv.exception.ExceptionHandler;
 import easv.ui.components.searchComponent.SearchController;
+import easv.ui.pages.PageControlable;
 import easv.ui.pages.geographyManagementPage.countryComponents.CountryComponent;
 import easv.ui.pages.geographyManagementPage.countryComponents.DeleteCountryController;
 import easv.ui.pages.geographyManagementPage.countryComponents.ManageCountryController;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GeographyManagementController implements Initializable, GeographyInterface {
+public class GeographyManagementController implements Initializable, GeographyInterface, PageControlable {
     @FXML
     private Parent createPage;
     @FXML
@@ -215,14 +216,7 @@ public class GeographyManagementController implements Initializable, GeographyIn
         pane.setVisible(false);
     }
 
-    /**
-     * Retrieves the parent node.
-     *
-     * @return the parent node
-     */
-    public Parent getCreatePage() {
-        return createPage;
-    }
+
 
     /**
      * Shows the operation status.
@@ -306,4 +300,15 @@ public class GeographyManagementController implements Initializable, GeographyIn
     public void performSelectSearchOperationTo(int entityId) {
 
     }
+
+    /**
+     * Retrieves the parent node.
+     *
+     * @return the parent node
+     */
+   @Override
+    public Parent getPageRoot() {
+        return createPage;
+    }
+
 }

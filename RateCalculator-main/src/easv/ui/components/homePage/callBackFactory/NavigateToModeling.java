@@ -37,7 +37,7 @@ public class NavigateToModeling  implements CallBack, Subject {
 
     private void initializePage(){
         TeamsPageController teamsPageController= new TeamsPageController(model, modalLayout);
-        root= teamsPageController.getRoot();
+        root= teamsPageController.getPageRoot();
     }
 
 

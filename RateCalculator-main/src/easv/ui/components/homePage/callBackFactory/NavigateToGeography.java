@@ -37,7 +37,7 @@ public class NavigateToGeography implements CallBack, Subject {
 
     private void initializePage(){
         GeographyManagementController geographyManagementController = new GeographyManagementController(model, pane, secondLayout);
-        root=geographyManagementController.getCreatePage();
+        root=geographyManagementController.getPageRoot();
     }
 
     public void setOpened(boolean opened) {

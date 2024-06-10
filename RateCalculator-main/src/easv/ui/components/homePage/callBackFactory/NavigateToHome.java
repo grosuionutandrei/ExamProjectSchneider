@@ -32,7 +32,7 @@ public class NavigateToHome implements CallBack, Subject {
 
         private void initializeRoot(){
             WorldMap  worldMap= new WorldMap(modalLayout,model);
-            root= worldMap.getRoot();
+            root= worldMap.getPageRoot();
         }
 
     @Override

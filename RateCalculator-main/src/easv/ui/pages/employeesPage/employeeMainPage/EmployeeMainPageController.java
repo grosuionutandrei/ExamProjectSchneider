@@ -10,6 +10,7 @@ import easv.exception.ExceptionHandler;
 import easv.exception.RateException;
 import easv.ui.components.searchComponent.EmployeeSearchHandler;
 import easv.ui.components.searchComponent.SearchController;
+import easv.ui.pages.PageControlable;
 import easv.ui.pages.employeesPage.deleteEmployee.DeleteEmployeeController;
 import easv.ui.pages.modelFactory.ModelFactory;
 import easv.ui.pages.employeesPage.employeeInfo.EmployeeInfoController;
@@ -38,7 +39,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class EmployeeMainPageController implements Initializable, DisplayEmployees {
+public class EmployeeMainPageController implements Initializable, DisplayEmployees , PageControlable {
     @FXML
     private VBox employeesContainer;
     @FXML
@@ -117,9 +118,7 @@ public class EmployeeMainPageController implements Initializable, DisplayEmploye
         }
     }
 
-    public Parent getRoot() {
-        return employeePage;
-    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -389,8 +388,6 @@ public class EmployeeMainPageController implements Initializable, DisplayEmploye
         if (regionFilterActive && countriesFilterCB.getSelectionModel().getSelectedItem() != null) {
             model.returnEmployeesByRegion(regionsFilter.getSelectionModel().getSelectedItem());
             teamsFilterCB.clearSelection();
-         //   model.performRegionTeamsOverheadCalculations();
-            // searchField.clear();
             setTotalRates();
             countryFilterActive = false;
             teamFilterActive=false;
@@ -432,21 +429,17 @@ public class EmployeeMainPageController implements Initializable, DisplayEmploye
         if (countryFilterActive && teamsFilterCB.getSelectionModel().getSelectedItem() != null) {
             model.returnEmployeesByCountry(countriesFilterCB.getSelectionModel().getSelectedItem());
             teamsFilterCB.clearSelection();
-            // searchField.clear();
             setTotalRates();
             teamFilterActive=false;
         } else if (regionFilterActive && teamsFilterCB.getSelectionModel().getSelectedItem() != null) {
             model.returnEmployeesByRegion(regionsFilter.getSelectionModel().getSelectedItem());
             teamsFilterCB.clearSelection();
-            // searchField.clear();
             setTotalRates();
             teamFilterActive=false;
         } else {
             model.performEmployeeSearchUndoOperation();
             teamsFilterCB.clearSelection();
             teamsFilterCB.setItems(FXCollections.observableArrayList(model.getOperationalTeams()));
-//            countriesFilterCB.clearSelection();
-//            countryFilterActive = false;
             setTotalRatesDefault();
             teamFilterActive=false;
         }
@@ -459,6 +452,10 @@ public class EmployeeMainPageController implements Initializable, DisplayEmploye
     }
 
 
+    @Override
+    public Parent getPageRoot() {
+            return employeePage;
+    }
 }
 
 

@@ -82,7 +82,7 @@ public class ControllerMediator {
         }
     }
 
-//TODO if   used modify to use the mediator
+
 
     /**
      * update the  selected components to distribute overhead, after the save operation was performed

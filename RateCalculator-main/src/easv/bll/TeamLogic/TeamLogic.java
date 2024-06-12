@@ -139,7 +139,9 @@ public class TeamLogic implements ITeamLogic {
     @Override
     public Map<OverheadHistory, List<Team>> performSimulationComputation(Team selectedTeamToDistributeFrom, Map<Team, String> insertedDistributionPercentageFromTeams, Map<Integer, Team> originalTeams) {
         Map<OverheadHistory, List<Team>> simulationValues = new HashMap<>();
+
         List<Team> previousOverheadValues = new ArrayList<>();
+
         List<Team> currentComputedOverheadValues = new ArrayList<>();
 
         // Create copies of the teams for previous values
@@ -210,6 +212,7 @@ public class TeamLogic implements ITeamLogic {
     @Override
     public Map<OverheadHistory, List<Team>> saveDistributionOperation(Map<Team, String> insertedDistributionPercentageFromTeams, Team selectedTeamToDistributeFrom, boolean simulationPerformed, Map<Integer, Team> initialTeamsValues) throws RateException {
         Map<OverheadHistory, List<Team>> savedData = new HashMap<>();
+
         Map<Team, Map<RateType, BigDecimal>> computedOverheadValues = computeTeamsOverheadForSaving(insertedDistributionPercentageFromTeams, selectedTeamToDistributeFrom);
 
         boolean distributionOperationSaved = teamDao.savePerformedDistribution(computedOverheadValues, selectedTeamToDistributeFrom);

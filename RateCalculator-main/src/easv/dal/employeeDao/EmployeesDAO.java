@@ -261,7 +261,7 @@ public class EmployeesDAO implements IEmployeeDAO {
                 }
                 conn.commit();
             } catch (SQLException e) {
-                e.printStackTrace();
+
                 conn.rollback();
             }
         } catch (SQLException | RateException e) {

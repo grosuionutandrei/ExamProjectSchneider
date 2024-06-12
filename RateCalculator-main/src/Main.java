@@ -8,9 +8,7 @@ import easv.ui.pages.modelFactory.ModelFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,9 +16,7 @@ import java.util.List;
 public class Main extends Application {
     public static void main(String[] args) {
         Application.launch();
-
     }
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -30,7 +26,8 @@ public class Main extends Application {
         List<Navigation> lowerNavigation = new ArrayList<>();
 
         //populate the lists with values
-        Collections.addAll(upperNavigation,Navigation.DISTRIBUTION,Navigation.CREATE,Navigation.EMPLOYEES,Navigation.MODELING);
+       Collections.addAll(upperNavigation,Navigation.DISTRIBUTION,Navigation.CREATE,Navigation.EMPLOYEES,Navigation.MODELING);
+
         Collections.addAll(lowerNavigation,Navigation.GEOGRAPHY);
 
         //initialize the view and model
@@ -43,6 +40,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 
 
     private static IModel initializeModel(Stage primaryStage) {

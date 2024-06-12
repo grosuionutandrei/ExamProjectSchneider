@@ -34,7 +34,7 @@ public class HomePageController implements Initializable, PageManager {
     private SideNavigationController sideNavigation;
     @FXML
     private HBox header;
-    private Observable observer;
+
     private IModel model;
     private List<Navigation> upperNavigation;
     private List<Navigation> lowerNavigation;
@@ -53,7 +53,7 @@ public class HomePageController implements Initializable, PageManager {
         this.model = model;
         try {
             root = loader.load();
-            observer = CallBackFactory.getObserver();
+
         } catch (IOException e) {
             ExceptionHandler.errorAlertMessage(ErrorCode.LOADING_FXML_FAILED.getValue());
         }
@@ -70,10 +70,9 @@ public class HomePageController implements Initializable, PageManager {
         NavigationFactory.setSecondLayout(this.secondLayout);
         NavigationFactory.setModel(this.model);
         NavigationFactory.setPageHolder(this);
+
         sideNavigation = new SideNavigationController(upperNavigation, lowerNavigation);
-
         initializeSideMenu(menu, sideNavigation.getRoot());
-
 
           //initialize  initial home page
         Platform.runLater(NavigationFactory::initializeHomePage);
@@ -97,8 +96,11 @@ public class HomePageController implements Initializable, PageManager {
      */
     @Override
     public void changePage(Parent page, Subject subject) {
-        observer.modifyDisplay(subject);
+        CallBackFactory.getObserver().modifyDisplay(subject);
         this.pageContainer.getChildren().clear();
         this.pageContainer.getChildren().add(page);
     }
+
+
+
 }

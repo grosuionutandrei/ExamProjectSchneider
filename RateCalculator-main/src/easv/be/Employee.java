@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.Objects;
 
 
-public class Employee {
+public class
+Employee {
     private String name;
     private EmployeeType employeeType;
     private Country country;

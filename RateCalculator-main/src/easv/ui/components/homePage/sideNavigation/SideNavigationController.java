@@ -30,8 +30,8 @@ public class SideNavigationController implements Initializable {
     @FXML
     private ScrollPane sideNavigationContainer;
     private boolean isExpanded;
-    private static   final double expandedWidth=300;
-    private static   final double originalWidth = 90;
+    private static   final double EXPANDED_WIDTH =300;
+    private static   final double ORIGINAL_WIDTH = 90;
     private List<Navigation> upperSectionNavigation;
     private List<Navigation> lowerSectionNavigation;
 
@@ -49,6 +49,7 @@ public class SideNavigationController implements Initializable {
             ExceptionHandler.errorAlertMessage(ErrorCode.LOADING_FXML_FAILED.getValue());
         }
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -79,7 +80,7 @@ public class SideNavigationController implements Initializable {
                return;
            }
            Timeline timeline  = new Timeline();
-           KeyValue keyValue= new KeyValue(sideNavigationContainer.prefWidthProperty(),expandedWidth);
+           KeyValue keyValue= new KeyValue(sideNavigationContainer.prefWidthProperty(), EXPANDED_WIDTH);
            KeyFrame keyFrame = new KeyFrame(Duration.millis(500),keyValue);
            timeline.getKeyFrames().add(keyFrame);
            timeline.play();
@@ -89,7 +90,7 @@ public class SideNavigationController implements Initializable {
     private void addOnExitListener(){
         sideNavigationContainer.addEventHandler(MouseEvent.MOUSE_EXITED, event->{
             Timeline timeline  = new Timeline();
-            KeyValue keyValue= new KeyValue(sideNavigationContainer.prefWidthProperty(),originalWidth);
+            KeyValue keyValue= new KeyValue(sideNavigationContainer.prefWidthProperty(), ORIGINAL_WIDTH);
             KeyFrame keyFrame = new KeyFrame(Duration.millis(500),keyValue);
             timeline.getKeyFrames().add(keyFrame);
             timeline.play();

@@ -198,7 +198,7 @@ public class DistributionController implements Initializable, DistributionContro
             return true;
         }
 
-        // validate the user entered inputs for overhead distribution
+        // validate the user entered inputs for overhead distribution, by calling the model
         DistributionValidation inputValidation = model.validateInputs();
 
         if (inputValidation.getErrorValues().containsKey(ErrorCode.OVERHEAD_ZERO)) {

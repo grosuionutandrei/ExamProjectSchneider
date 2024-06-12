@@ -28,6 +28,7 @@ public class NavigationOperation implements CallBack, Subject {
         pageManager.changePage(root, this);
         isOpened = true;
     }
+
     private void initializePage() {
         PageControlable pageControlable = this.pageControllerFactory.createController();
         root =pageControlable.getPageRoot();

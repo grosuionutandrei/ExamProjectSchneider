@@ -35,7 +35,7 @@ public class NavigationController implements Initializable {
         try {
             navComponent= loader.load();
         } catch (IOException e) {
-            e.printStackTrace();
+
             throw new RuntimeException(e);
         }
     }

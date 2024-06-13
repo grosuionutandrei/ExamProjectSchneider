@@ -16,6 +16,8 @@ public class EmployeePageControllerFactory  implements PageControllerFactory{
 
     @Override
     public PageControlable createController() {
-        return new EmployeeMainPageController(firstLayout);
+        EmployeeMainPageController empl = new EmployeeMainPageController(firstLayout);
+        model.setDisplayer(empl);
+        return empl;
     }
 }

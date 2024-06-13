@@ -26,8 +26,7 @@ public class Main extends Application {
         List<Navigation> lowerNavigation = new ArrayList<>();
 
         //populate the lists with values
-       Collections.addAll(upperNavigation,Navigation.DISTRIBUTION,Navigation.CREATE,Navigation.EMPLOYEES,Navigation.MODELING);
-
+        Collections.addAll(upperNavigation,Navigation.DISTRIBUTION,Navigation.CREATE,Navigation.EMPLOYEES,Navigation.MODELING);
         Collections.addAll(lowerNavigation,Navigation.GEOGRAPHY);
 
         //initialize the view and model

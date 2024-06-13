@@ -134,14 +134,14 @@ public class DistributeToController implements Initializable,DistributeToInterfa
                     if (!newValue.matches("^\\d{0,3}([.,]\\d{1,2})?$")) {
                         showInfoError(ErrorCode.INVALID_OVERHEADVALUE.getValue() + "\n" + teamToDisplay.getTeamName() + "\n" + ErrorCode.INVALID_OVERHEAD_MESSAGE.getValue());
                         teamComponentDistributeFrom.pseudoClassStateChanged(INVALID_INPUT, true);
-                        model.setDistributionPercentageTeam(teamToDisplay, newValue);
-                        distributionMediator.updateTotalOverheadValue();
+                       model.setDistributionPercentageTeam(teamToDisplay, newValue);
+                       distributionMediator.updateTotalOverheadValue();
                     } else {
                         // Convert new value to a double
                         Double overheadInserted = validatePercentageValue(newValue);
                         if (!(overheadInserted > 0 && overheadInserted <= 100)) {
                             teamComponentDistributeFrom.pseudoClassStateChanged(INVALID_INPUT, true);
-                            model.setDistributionPercentageTeam(teamToDisplay, newValue);
+                           model.setDistributionPercentageTeam(teamToDisplay, newValue);
                             distributionMediator.updateTotalOverheadValue();
                             showInfoError(ErrorCode.INVALID_OVERHEADVALUE.getValue() + "\n" + teamToDisplay.getTeamName() + "\n" + ErrorCode.INVALID_OVERHEAD_MESSAGE.getValue());
 
